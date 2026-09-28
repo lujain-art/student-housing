@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" width="1536" height="1024" role="img" aria-label="Concept illustration of the residence building">
+  <title>Residence building — concept illustration</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a2350"/>
+      <stop offset="1" stop-color="#02091c"/>
+    </linearGradient>
+    <linearGradient id="faceL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d2a5e"/>
+      <stop offset="1" stop-color="#061634"/>
+    </linearGradient>
+    <linearGradient id="faceR" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a2350"/>
+      <stop offset="1" stop-color="#04102c"/>
+    </linearGradient>
+    <linearGradient id="roof" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#153a75"/>
+      <stop offset="1" stop-color="#0b2350"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd489"/>
+      <stop offset="1" stop-color="#f3bf5b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".62" r=".5">
+      <stop offset="0" stop-color="#f3bf5b" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#f3bf5b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1536" height="1024" fill="url(#sky)"/>
+  <ellipse cx="768" cy="640" rx="640" ry="300" fill="url(#glow)"/>
+
+  <path d="M768 806L1420 962 768 1118 116 962z" fill="#04102c" opacity=".85"/>
+
+  <path d="M300 250L768 92v742L300 992z" fill="url(#faceL)"/>
+  <path d="M768 92l436 158v742L768 834z" fill="url(#faceR)"/>
+  <path d="M300 250L300 92l468-158 436 158-436 158z" fill="url(#roof)"/>
+
+  <g fill="url(#gold)" opacity=".85">
+    <path d="M368 316l122-42v58l-122 42z"/>
+    <path d="M368 414l122-42v58l-122 42z"/>
+    <path d="M368 512l122-42v58l-122 42z"/>
+    <path d="M368 610l122-42v58l-122 42z"/>
+    <path d="M368 708l122-42v58l-122 42z"/>
+    <path d="M546 264l154-53v58l-154 53z"/>
+    <path d="M546 362l154-53v58l-154 53z"/>
+    <path d="M546 460l154-53v58l-154 53z"/>
+    <path d="M546 558l154-53v58l-154 53z"/>
+    <path d="M546 656l154-53v58l-154 53z"/>
+  </g>
+
+  <g fill="url(#gold)" opacity=".62">
+    <path d="M840 214l116 42v56l-116-42z"/>
+    <path d="M840 312l116 42v56l-116-42z"/>
+    <path d="M840 410l116 42v56l-116-42z"/>
+    <path d="M840 508l116 42v56l-116-42z"/>
+    <path d="M840 606l116 42v56l-116-42z"/>
+    <path d="M1006 274l122 44v56l-122-44z"/>
+    <path d="M1006 372l122 44v56l-122-44z"/>
+    <path d="M1006 470l122 44v56l-122-44z"/>
+    <path d="M1006 568l122 44v56l-122-44z"/>
+  </g>
+
+  <path d="M862 62l148 54v70l-148-54z" fill="#0d2a5e"/>
+  <path d="M1010 116l136-50v70l-136 50z" fill="#0a2350"/>
+  <path d="M862 62l148-52 136 50-136 56z" fill="#153a75"/>
+
+  <path d="M636 986l132-48v-64l-132 48z" fill="#0a2350"/>
+  <path d="M768 938l118 42v64l-118-42z" fill="#04102c"/>
+  <rect x="654" y="946" width="20" height="56" fill="url(#gold)" opacity=".9"/>
+  <rect x="768" y="972" width="20" height="56" fill="url(#gold)" opacity=".9"/>
+
+  <g fill="#0f3565">
+    <path d="M196 900l38-52 38 52z"/><rect x="230" y="896" width="8" height="40"/>
+    <path d="M1300 880l42-58 42 58z"/><rect x="1338" y="876" width="9" height="44"/>
+  </g>
+  <g fill="#f3bf5b" opacity=".5">
+    <circle cx="196" cy="884" r="4"/>
+    <circle cx="1348" cy="862" r="4"/>
+  </g>
+</svg>

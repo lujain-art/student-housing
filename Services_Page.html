@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الخدمات والمرافق — سكن الطالبات</title>
+  <meta name="description"
+    content="خدمات ومرافق سكن الطالبات — نادي صحي، مصاعد، أمن، تراس، ولوبي فاخر قرب الجامعة.">
+  <meta name="keywords" content="خدمات السكن, مرافق, نادي صحي, أمن وحماية, نموذج أولي">
+  <meta name="author" content="Student Housing Team">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="الخدمات والمرافق — سكن الطالبات">
+  <meta property="og:description" content="خدمات ومرافق سكن الطالبات — نموذج أولي.">
+  <meta property="og:image" content="Photos/Logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="CSS/Style.css">
+  <link rel="icon" href="Photos/Logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <script src="Js/lang-data.js"></script>
+
+  <script>
+    (function (d) {
+        var s = d.createElement("script");
+        s.setAttribute("data-position", 5);
+        s.setAttribute("data-color", "#F3BF5B");
+        s.setAttribute("data-widget_layout", "full");
+        s.setAttribute("data-account", "6AjWs1Mzxq");
+        s.setAttribute("src", "https://cdn.userway.org/widget.js");
+        (d.body || d.head).appendChild(s);
+    })(document);
+  </script>
+    <style>
+    :root {
+      --navy: #02091C;
+      --navy2: #0a1a35;
+      --gold: #F3BF5B;
+      --gold2: #d4a84f;
+      --blue: #294062;
+      --light: #E6EEF5;
+      --ease: cubic-bezier(.25, .46, .45, .94);
+    }
+
+    /* Section separator */
+    .svc-sep {
+      background: var(--navy);
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .svc-sep-num {
+      font-family: 'Cairo', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #F3BF5B;
+      line-height: 1;
+      width: 68px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .svc-sep-title {
+      font-family: 'Cairo', serif;
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: .4px;
+    }
+
+    .svc-sep-title span {
+      color: var(--gold);
+    }
+
+    .svc-sep-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to left, transparent, rgba(243, 191, 91, .22));
+    }
+
+    /* Main block */
+    .svc-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+      overflow: hidden;
+    }
+
+    .svc-block.rev {
+      direction: ltr;
+    }
+
+    .svc-block.rev>* {
+      direction: rtl;
+    }
+
+    /* ─── MEDIA PANEL ─── */
+    .svc-media {
+      position: relative;
+      background: #000;
+      height: 520px;
+      overflow: hidden;
+    }
+
+    /* All media items stacked, crossfade via opacity */
+    .svc-stack {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .svc-item {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity .6s var(--ease);
+      pointer-events: none;
+    }
+
+    .svc-item.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    video.svc-item {
+      object-fit: cover;
+    }
+
+    /* Gradient overlay */
+    .svc-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(2, 9, 28, .4) 0%, transparent 55%, rgba(2, 9, 28, .25) 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Thumbnail rail */
+    .svc-rail {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 5;
+      display: flex;
+      background: rgba(2, 9, 28, .88);
+      backdrop-filter: blur(10px);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .svc-rail::-webkit-scrollbar {
+      display: none;
+    }
+
+    .svc-thumb {
+      flex: 0 0 68px;
+      height: 52px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2.5px solid transparent;
+      transition: border-color .2s;
+      flex-shrink: 0;
+    }
+
+    .svc-thumb.active {
+      border-bottom-color: var(--gold);
+    }
+
+    .svc-thumb img,
+    .svc-thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: .5;
+      transition: opacity .2s;
+    }
+
+    .svc-thumb:hover img,
+    .svc-thumb:hover video,
+    .svc-thumb.active img,
+    .svc-thumb.active video {
+      opacity: 1;
+    }
+
+    .play-mark {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .play-mark svg {
+      width: 18px;
+      height: 18px;
+      fill: rgba(255, 255, 255, .85);
+    }
+
+    /* ─── INFO PANEL ─── */
+    .svc-info {
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px 54px;
+      position: relative;
+    }
+
+    .svc-info::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      bottom: 40px;
+      right: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    .svc-block.rev .svc-info::before {
+      right: auto;
+      left: 0;
+    }
+
+    .svc-info.dark {
+      background: var(--navy2);
+    }
+
+    .svc-info.dark::before {
+      background: linear-gradient(to bottom, var(--gold), rgba(41, 64, 98, .15));
+    }
+
+    .svc-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Cairo', sans-serif;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: 12px;
+    }
+
+    .svc-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 22px;
+      height: 1px;
+      background: var(--gold2);
+    }
+
+    .svc-info h2 {
+      font-family: 'Cairo', serif;
+      font-size: clamp(1.4rem, 2vw, 2rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .svc-info.dark h2 {
+      color: #fff;
+    }
+
+    .svc-info h2 em {
+      font-style: normal;
+      color: var(--gold2);
+    }
+
+    .svc-info.dark h2 em {
+      color: var(--gold);
+    }
+
+    .svc-divider {
+      width: 36px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .svc-info p {
+      font-family: 'Cairo', sans-serif;
+      font-size: .92rem;
+      color: #4a5568;
+      line-height: 1.9;
+      margin-bottom: 22px;
+    }
+
+    .svc-info.dark p {
+      color: rgba(230, 238, 245, .7);
+    }
+
+    .svc-feats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .svc-feat {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Cairo', sans-serif;
+      font-size: .84rem;
+      font-weight: 600;
+      color: #2d3748;
+    }
+
+    .svc-info.dark .svc-feat {
+      color: var(--light);
+    }
+
+    .svc-feat::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* Mobile */
+    @media(max-width:900px) {
+
+      .svc-block,
+      .svc-block.rev {
+        grid-template-columns: 1fr;
+        direction: rtl;
+      }
+
+      .svc-media {
+        height: 280px;
+      }
+
+      .svc-info {
+        padding: 30px 22px;
+      }
+
+      .svc-info::before,
+      .svc-block.rev .svc-info::before {
+        top: 0;
+        bottom: auto;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+
+      .svc-block.rev .svc-media {
+        order: -1;
+      }
+    }
+
+    @media(max-width:480px) {
+      .svc-media {
+        height: 220px;
+      }
+
+      .svc-thumb {
+        flex: 0 0 58px;
+        height: 46px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="site-header">
+    <div class="toolbar" style="display:flex;align-items:center;justify-content:space-between;padding:8px 16px;">
+      <a href="index.html"><img src="Photos/Logo.svg" alt="شعار السكن"></a>
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false"><span
+            id="langFlag">🇯🇴</span><span id="langLabel">العربية</span><span class="lang-arrow">▼</span></button>
+        <div class="lang-dropdown" role="listbox">
+          <div class="lang-option active" data-lang="ar" role="option" tabindex="0"><span class="flag">🇯🇴</span>
+            العربية</div>
+          <div class="lang-option" data-lang="en" role="option" tabindex="0"><span class="flag">EN</span> English</div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar" role="navigation">
+      <button class="hamburger" id="hamburger" aria-label="فتح القائمة"
+        aria-expanded="false"><span></span><span></span><span></span></button>
+      <a href="index.html" data-t="nav_home">الرئيسية</a>
+      <a href="Rooms_Page.html" data-t="nav_rooms">الغرف</a>
+      <a href="Services_Page.html" data-t="nav_services" class="active">الخدمات والمرافق</a>
+      <a href="News_Page.html" data-t="nav_news">الأخبار والفعاليات</a>
+      <a href="Guide_Page.html" data-t="nav_guide">دليل السكن</a>
+      <a href="Contact_Page.html" data-t="nav_contact">تواصل معنا</a>
+    </nav>
+  </div>
+
+  <div class="page-hero">
+    <h1><span data-t="svc_hero_title">الخدمات</span> <span data-t="svc_hero_title_span">والمرافق</span></h1>
+    <p data-t="svc_hero_sub">كل ما تحتاجينه تحت سقف واحد</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <main>
+
+    <!-- 01 الأمان -->
+    <div class="svc-sep">
+      <div class="svc-sep-num">01</div>
+      <div class="svc-sep-title" data-t="svc_sep1_title">الأمان والحراسة</div>
+      <div class="svc-sep-line"></div>
+    </div>
+    <div class="svc-block" id="b-sec">
+      <div class="svc-media">
+        <div class="svc-stack">
+          <img class="svc-item active" src="Photos/Security/Security_Guard_1.jpg" alt="">
+          <img class="svc-item" src="Photos/Security/Security_Guard_2.jpeg" alt="">
+          <img class="svc-item" src="Photos/Security/Security_Department_1.jpg" alt="">
+          <img class="svc-item" src="Photos/Security/Security_Department_2.jpg" alt="">
+          <img class="svc-item" src="Photos/Security/CCTV.jpg" alt="">
+          <img class="svc-item" src="Photos/Security/Fingerprint.jpg" alt="">
+          <video class="svc-item" src="Videos/Services/Fire_alarm.mp4" muted loop playsinline preload="none"></video>
+        </div>
+        <div class="svc-rail">
+          <div class="svc-thumb active" onclick="pick('b-sec',0,this)"><img src="Photos/Security/Security_Guard_1.jpg"
+              alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-sec',1,this)"><img src="Photos/Security/Security_Guard_2.jpeg" alt="">
+          </div>
+          <div class="svc-thumb" onclick="pick('b-sec',2,this)"><img src="Photos/Security/Security_Department_1.jpg"
+              alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-sec',3,this)"><img src="Photos/Security/Security_Department_2.jpg"
+              alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-sec',4,this)"><img src="Photos/Security/CCTV.jpg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-sec',5,this)"><img src="Photos/Security/Fingerprint.jpg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-sec',6,this)"><video src="Videos/Services/Fire_alarm.mp4" muted
+              preload="none"></video>
+            <div class="play-mark"><svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-info">
+        <div class="svc-eyebrow" data-t="svc_eyebrow_security">الأمان والحماية</div>
+        <h2 data-t="svc_h2_security">حراسة 24 ساعة بلا انقطاع</h2>
+        <div class="svc-divider"></div>
+        <p data-t="svc_p_security">منظومة أمنية متكاملة تضمن سلامة كل طالبة — حراسة خاصة، كاميرات CCTV، بصمة إلكترونية،
+          ونظام إنذار حريق متطور.</p>
+        <div class="svc-feats">
+          <div class="svc-feat" data-t="svc_f_sec1">حراسة خاصة مدار الساعة</div>
+          <div class="svc-feat" data-t="svc_f_sec2">كاميرات مراقبة CCTV شاملة</div>
+          <div class="svc-feat" data-t="svc_f_sec3">بصمة إلكترونية للمداخل</div>
+          <div class="svc-feat" data-t="svc_f_sec4">نظام إنذار حريق متطور</div>
+          <div class="svc-feat" data-t="svc_f_sec5">أوقات دخول ثابتة ومنضبطة</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 النادي الصحي -->
+    <div class="svc-sep">
+      <div class="svc-sep-num">02</div>
+      <div class="svc-sep-title" data-t="svc_sep2_title">النادي الصحي</div>
+      <div class="svc-sep-line"></div>
+    </div>
+    <div class="svc-block rev" id="b-gym">
+      <div class="svc-info dark">
+        <div class="svc-eyebrow" data-t="svc_eyebrow_gym">لياقة بدنية</div>
+        <h2 data-t="svc_h2_gym">أجهزة رياضية متكاملة حصراً للطالبات</h2>
+        <div class="svc-divider"></div>
+        <p data-t="svc_p_gym">نادٍ صحي واسع بأحدث الأجهزة الرياضية — لأن صحتكِ امتداد طبيعي لتفوقكِ الأكاديمي.</p>
+        <div class="svc-feats">
+          <div class="svc-feat" data-t="svc_f_gym1">أجهزة مشي Treadmill</div>
+          <div class="svc-feat" data-t="svc_f_gym2">دراجات ثابتة وإهليلجية</div>
+          <div class="svc-feat" data-t="svc_f_gym3">أوزان حرة ومحطات عضلية</div>
+          <div class="svc-feat" data-t="svc_f_gym4">حلبة ملاكمة</div>
+          <div class="svc-feat" data-t="svc_f_gym5">طاولة فوسبول للترفيه</div>
+        </div>
+      </div>
+      <div class="svc-media">
+        <div class="svc-stack">
+          <img class="svc-item active" src="Photos/Gym/Fully_Equipped_Gym.jpeg" alt="">
+          <img class="svc-item" src="Photos/Gym/Treadmills_1.jpeg" alt="">
+          <img class="svc-item" src="Photos/Gym/Treadmills_2.jpeg" alt="">
+          <img class="svc-item" src="Photos/Gym/Stationary_Bikes.jpeg" alt="">
+          <img class="svc-item" src="Photos/Gym/Elliptical_Machines.jpeg" alt="">
+          <img class="svc-item" src="Photos/Gym/Dumbbells_1.jpeg" alt="">
+          <img class="svc-item" src="Photos/Gym/Dumbbells_2.jpeg" alt="">
+          <img class="svc-item" src="Photos/Gym/Weight_Machines.jpeg" alt="">
+          <img class="svc-item" src="Photos/Gym/Boxing_1.jpeg" alt="">
+          <img class="svc-item" src="Photos/Gym/Boxing_2.jpeg" alt="">
+          <img class="svc-item" src="Photos/Gym/Boxing_3.jpeg" alt="">
+          <img class="svc-item" src="Photos/Gym/Foosball_Table.jpeg" alt="">
+          <video class="svc-item" src="Videos/Services/Gym.mp4" muted loop playsinline preload="none"></video>
+        </div>
+        <div class="svc-rail">
+          <div class="svc-thumb active" onclick="pick('b-gym',0,this)"><img src="Photos/Gym/Fully_Equipped_Gym.jpeg"
+              alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-gym',1,this)"><img src="Photos/Gym/Treadmills_1.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-gym',2,this)"><img src="Photos/Gym/Treadmills_2.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-gym',3,this)"><img src="Photos/Gym/Stationary_Bikes.jpeg" alt="">
+          </div>
+          <div class="svc-thumb" onclick="pick('b-gym',4,this)"><img src="Photos/Gym/Elliptical_Machines.jpeg" alt="">
+          </div>
+          <div class="svc-thumb" onclick="pick('b-gym',5,this)"><img src="Photos/Gym/Dumbbells_1.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-gym',6,this)"><img src="Photos/Gym/Dumbbells_2.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-gym',7,this)"><img src="Photos/Gym/Weight_Machines.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-gym',8,this)"><img src="Photos/Gym/Boxing_1.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-gym',9,this)"><img src="Photos/Gym/Boxing_2.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-gym',10,this)"><img src="Photos/Gym/Boxing_3.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-gym',11,this)"><img src="Photos/Gym/Foosball_Table.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-gym',12,this)"><video src="Videos/Services/Gym.mp4" muted
+              preload="none"></video>
+            <div class="play-mark"><svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 الاستقبال -->
+    <div class="svc-sep">
+      <div class="svc-sep-num">03</div>
+      <div class="svc-sep-title" data-t="svc_sep3_title">الاستقبال والردهة</div>
+      <div class="svc-sep-line"></div>
+    </div>
+    <div class="svc-block" id="b-lob">
+      <div class="svc-media">
+        <div class="svc-stack">
+          <img class="svc-item active" src="Photos/Housing/Lobby_1.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housing/Lobby_2.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housing/Lobby_3.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housing/Lobby_4.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housing/Lobby_5.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housing/Lobby_6.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housing/Lobby_7.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housing/Lobby_8.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housing/Reception_1.jpg" alt="">
+          <img class="svc-item" src="Photos/Housing/Reception_2.jpg" alt="">
+          <img class="svc-item" src="Photos/Housing/Reception_3.jpg" alt="">
+          <img class="svc-item" src="Photos/Housing/Reception_4.jpeg" alt="">
+        </div>
+        <div class="svc-rail">
+          <div class="svc-thumb active" onclick="pick('b-lob',0,this)"><img src="Photos/Housing/Lobby_1.jpeg" alt="">
+          </div>
+          <div class="svc-thumb" onclick="pick('b-lob',1,this)"><img src="Photos/Housing/Lobby_2.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-lob',2,this)"><img src="Photos/Housing/Lobby_3.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-lob',3,this)"><img src="Photos/Housing/Lobby_4.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-lob',4,this)"><img src="Photos/Housing/Lobby_5.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-lob',5,this)"><img src="Photos/Housing/Lobby_6.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-lob',6,this)"><img src="Photos/Housing/Lobby_7.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-lob',7,this)"><img src="Photos/Housing/Lobby_8.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-lob',8,this)"><img src="Photos/Housing/Reception_1.jpg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-lob',9,this)"><img src="Photos/Housing/Reception_2.jpg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-lob',10,this)"><img src="Photos/Housing/Reception_3.jpg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-lob',11,this)"><img src="Photos/Housing/Reception_4.jpeg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="svc-info">
+        <div class="svc-eyebrow" data-t="svc_eyebrow_lobby">ردهة وضيافة</div>
+        <h2 data-t="svc_h2_lobby">ردهة فاخرة وصالة استقبال للأهالي</h2>
+        <div class="svc-divider"></div>
+        <p data-t="svc_p_lobby">ردهة استقبال فاخرة وصالة مخصصة لأهالي الطالبات — مساحة راقية للقاء والترحيب.</p>
+        <div class="svc-feats">
+          <div class="svc-feat" data-t="svc_f_lob1">ردهة رئيسية بتصميم فندقي</div>
+          <div class="svc-feat" data-t="svc_f_lob2">صالة مريحة لاستقبال الأهالي</div>
+          <div class="svc-feat" data-t="svc_f_lob3">ديكور أنيق وإضاءة دافئة</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 المصاعد -->
+    <div class="svc-sep">
+      <div class="svc-sep-num">04</div>
+      <div class="svc-sep-title" data-t="svc_sep4_title">المصاعد والممرات</div>
+      <div class="svc-sep-line"></div>
+    </div>
+    <div class="svc-block rev" id="b-elv">
+      <div class="svc-info dark">
+        <div class="svc-eyebrow" data-t="svc_eyebrow_elv">تنقل مريح</div>
+        <h2 data-t="svc_h2_elv">مصاعد فاخرة وممرات أنيقة</h2>
+        <div class="svc-divider"></div>
+        <p data-t="svc_p_elv">مصاعد حديثة وسريعة وممرات مضاءة بأناقة — راحة التنقل في كل طابق.</p>
+        <div class="svc-feats">
+          <div class="svc-feat" data-t="svc_f_elv1">مصاعد حديثة وسريعة</div>
+          <div class="svc-feat" data-t="svc_f_elv2">ممرات مضاءة وأنيقة</div>
+          <div class="svc-feat" data-t="svc_f_elv3">تصميم داخلي راقٍ</div>
+        </div>
+      </div>
+      <div class="svc-media">
+        <div class="svc-stack">
+          <img class="svc-item active" src="Photos/Housing/Elevator_1.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housing/Elevator_2.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housing/Elevator_3.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housing/Elevator_4.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housing/Hallway.jpg" alt="">
+        </div>
+        <div class="svc-rail">
+          <div class="svc-thumb active" onclick="pick('b-elv',0,this)"><img src="Photos/Housing/Elevator_1.jpeg" alt="">
+          </div>
+          <div class="svc-thumb" onclick="pick('b-elv',1,this)"><img src="Photos/Housing/Elevator_2.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-elv',2,this)"><img src="Photos/Housing/Elevator_3.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-elv',3,this)"><img src="Photos/Housing/Elevator_4.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-elv',4,this)"><img src="Photos/Housing/Hallway.jpg" alt=""></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 التنظيف والصيانة -->
+    <div class="svc-sep">
+      <div class="svc-sep-num">05</div>
+      <div class="svc-sep-title" data-t="svc_sep5_title">التنظيف والصيانة</div>
+      <div class="svc-sep-line"></div>
+    </div>
+    <div class="svc-block" id="b-mnt">
+      <div class="svc-media">
+        <div class="svc-stack">
+          <img class="svc-item active" src="Photos/Housekeeping/Housekeeping_1.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housekeeping/Housekeeping_2.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housekeeping/Housekeeping_3.jpeg" alt="">
+          <img class="svc-item" src="Photos/Maintenance/Maintenance_1.jpg" alt="">
+          <img class="svc-item" src="Photos/Maintenance/Maintenance_2.jpg" alt="">
+          <img class="svc-item" src="Photos/Maintenance/Maintenance_3.jpg" alt="">
+          <video class="svc-item" src="Videos/Services/Maintenance.mp4" muted loop playsinline preload="none"></video>
+        </div>
+        <div class="svc-rail">
+          <div class="svc-thumb active" onclick="pick('b-mnt',0,this)"><img
+              src="Photos/Housekeeping/Housekeeping_1.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-mnt',1,this)"><img src="Photos/Housekeeping/Housekeeping_2.jpeg"
+              alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-mnt',2,this)"><img src="Photos/Housekeeping/Housekeeping_3.jpeg"
+              alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-mnt',3,this)"><img src="Photos/Maintenance/Maintenance_1.jpg" alt="">
+          </div>
+          <div class="svc-thumb" onclick="pick('b-mnt',4,this)"><img src="Photos/Maintenance/Maintenance_2.jpg" alt="">
+          </div>
+          <div class="svc-thumb" onclick="pick('b-mnt',5,this)"><img src="Photos/Maintenance/Maintenance_3.jpg" alt="">
+          </div>
+          <div class="svc-thumb" onclick="pick('b-mnt',6,this)"><video src="Videos/Services/Maintenance.mp4" muted
+              preload="none"></video>
+            <div class="play-mark"><svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-info">
+        <div class="svc-eyebrow" data-t="svc_eyebrow_maint">نظافة لا تهاون فيها</div>
+        <h2 data-t="svc_h2_maint">فريق تنظيف يومي وصيانة فورية</h2>
+        <div class="svc-divider"></div>
+        <p data-t="svc_p_maint">بيئة نظيفة تنعكس على صحتكِ وإنتاجيتكِ — تنظيف يومي بمعايير فندقية وصيانة سريعة لأي عطل.
+        </p>
+        <div class="svc-feats">
+          <div class="svc-feat" data-t="svc_f_mnt1">تنظيف يومي بمعايير فندقية</div>
+          <div class="svc-feat" data-t="svc_f_mnt2">فريق صيانة متخصص</div>
+          <div class="svc-feat" data-t="svc_f_mnt3">استجابة سريعة لأي طلب</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 التراس -->
+    <div class="svc-sep">
+      <div class="svc-sep-num">06</div>
+      <div class="svc-sep-title" data-t="svc_sep6_title">التراس والمساحات المفتوحة</div>
+      <div class="svc-sep-line"></div>
+    </div>
+    <div class="svc-block rev" id="b-ter">
+      <div class="svc-info dark">
+        <div class="svc-eyebrow" data-t="svc_eyebrow_terrace">مساحة للتجدد</div>
+        <h2 data-t="svc_h2_terrace">تراس واسع بإطلالة لا تُقاوم</h2>
+        <div class="svc-divider"></div>
+        <p data-t="svc_p_terrace">مساحة مفتوحة فاخرة للاسترخاء والتجمع مع الزميلات — في جو منعش بإطلالة رائعة على محيط
+          الجامعة.</p>
+        <div class="svc-feats">
+          <div class="svc-feat" data-t="svc_f_ter1">تراس واسع في أعلى المبنى</div>
+          <div class="svc-feat" data-t="svc_f_ter2">إطلالة بانورامية</div>
+          <div class="svc-feat" data-t="svc_f_ter3">جلسات مريحة ومتنوعة</div>
+          <div class="svc-feat" data-t="svc_f_ter4">مضاء ليلاً بشكل أنيق</div>
+        </div>
+      </div>
+      <div class="svc-media">
+        <div class="svc-stack">
+          <img class="svc-item active" src="Photos/Terrace/Terrace_1.jpeg" alt="">
+          <img class="svc-item" src="Photos/Terrace/Terrace_2.jpeg" alt="">
+          <img class="svc-item" src="Photos/Terrace/Terrace_3.jpeg" alt="">
+          <img class="svc-item" src="Photos/Terrace/Terrace_4.jpeg" alt="">
+          <img class="svc-item" src="Photos/Terrace/Terrace_5.jpeg" alt="">
+          <img class="svc-item" src="Photos/Terrace/Terrace_6.jpeg" alt="">
+          <img class="svc-item" src="Photos/Terrace/Terrace_7.jpeg" alt="">
+          <img class="svc-item" src="Photos/Terrace/Terrace_8.jpeg" alt="">
+          <img class="svc-item" src="Photos/Terrace/Terrace_9.jpeg" alt="">
+          <img class="svc-item" src="Photos/Terrace/Terrace_10.jpeg" alt="">
+        </div>
+        <div class="svc-rail">
+          <div class="svc-thumb active" onclick="pick('b-ter',0,this)"><img src="Photos/Terrace/Terrace_1.jpeg" alt="">
+          </div>
+          <div class="svc-thumb" onclick="pick('b-ter',1,this)"><img src="Photos/Terrace/Terrace_2.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-ter',2,this)"><img src="Photos/Terrace/Terrace_3.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-ter',3,this)"><img src="Photos/Terrace/Terrace_4.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-ter',4,this)"><img src="Photos/Terrace/Terrace_5.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-ter',5,this)"><img src="Photos/Terrace/Terrace_6.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-ter',6,this)"><img src="Photos/Terrace/Terrace_7.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-ter',7,this)"><img src="Photos/Terrace/Terrace_8.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-ter',8,this)"><img src="Photos/Terrace/Terrace_9.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-ter',9,this)"><img src="Photos/Terrace/Terrace_10.jpeg" alt=""></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 المبنى -->
+    <div class="svc-sep">
+      <div class="svc-sep-num">07</div>
+      <div class="svc-sep-title" data-t="svc_sep7_title">المبنى والواجهة الخارجية</div>
+      <div class="svc-sep-line"></div>
+    </div>
+    <div class="svc-block" id="b-out">
+      <div class="svc-media">
+        <div class="svc-stack">
+          <img class="svc-item active" src="Photos/Housing/outside_1.jpg" alt="">
+          <img class="svc-item" src="Photos/Housing/outside_2.jpeg" alt="">
+          <img class="svc-item" src="Photos/Housing/outside_3.jpg" alt="">
+          <img class="svc-item" src="Photos/Housing/3D.svg" alt="">
+          <img class="svc-item" src="Photos/Housing/Framed_Artwork.jpeg" alt="">
+        </div>
+        <div class="svc-rail">
+          <div class="svc-thumb active" onclick="pick('b-out',0,this)"><img src="Photos/Housing/outside_1.jpg" alt="">
+          </div>
+          <div class="svc-thumb" onclick="pick('b-out',1,this)"><img src="Photos/Housing/outside_2.jpeg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-out',2,this)"><img src="Photos/Housing/outside_3.jpg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-out',3,this)"><img src="Photos/Housing/3D.svg" alt=""></div>
+          <div class="svc-thumb" onclick="pick('b-out',4,this)"><img src="Photos/Housing/Framed_Artwork.jpeg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="svc-info">
+        <div class="svc-eyebrow" data-t="svc_eyebrow_building">معمار وموقع</div>
+        <h2 data-t="svc_h2_building">واجهة معمارية راقية قرب الحرم الجامعي</h2>
+        <div class="svc-divider"></div>
+        <p data-t="svc_p_building">مبنى فاخر بتصميم حديث في موقع استراتيجي مباشرةً قرب البوابة الشمالية للجامعة —
+          دقيقتان مشياً.</p>
+        <div class="svc-feats">
+          <div class="svc-feat" data-t="svc_f_out1">موقع مميز قرب الجامعة</div>
+          <div class="svc-feat" data-t="svc_f_out2">تصميم معماري عصري</div>
+          <div class="svc-feat" data-t="svc_f_out3">غرف بمساحات متنوعة</div>
+          <div class="svc-feat" data-t="svc_f_out4">محيط هادئ وآمن</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 آراء الأهالي -->
+    <div class="svc-sep">
+      <div class="svc-sep-num">08</div>
+      <div class="svc-sep-title" data-t="svc_sep8_title">آراء الأهالي</div>
+      <div class="svc-sep-line"></div>
+    </div>
+    <div class="svc-block rev" id="b-op">
+      <div class="svc-info dark">
+        <div class="svc-eyebrow" data-t="svc_eyebrow_opinions">شهادات حقيقية</div>
+        <h2 data-t="svc_h2_opinions">ثقة الأسرة أكبر شهادة لنا</h2>
+        <div class="svc-divider"></div>
+        <p data-t="svc_p_opinions">رضا الأهالي هو المقياس الحقيقي لجودتنا — آراؤهم الإيجابية جاءت تلقائية من تجربة
+          حقيقية.</p>
+        <div class="svc-feats">
+          <div class="svc-feat" data-t="svc_f_op1">أمان تام يطمئن الأهالي</div>
+          <div class="svc-feat" data-t="svc_f_op2">تواصل مستمر مع الإدارة</div>
+          <div class="svc-feat" data-t="svc_f_op3">شفافية كاملة وثقة متبادلة</div>
+        </div>
+      </div>
+      <div class="svc-media">
+        <div class="svc-stack">
+          <img class="svc-item active" src="Photos/Parents' opinions/opinion_1.jpg" alt="parent opinion 1">
+          <img class="svc-item" src="Photos/Parents' opinions/opinion_2.jpg" alt="parent opinion 2">
+          <img class="svc-item" src="Photos/Parents' opinions/opinion_3.jpg" alt="parent opinion 3">
+          <img class="svc-item" src="Photos/Parents' opinions/opinion_4.jpg" alt="parent opinion 4">
+        </div>
+        <div class="svc-rail">
+          <div class="svc-thumb active" onclick="pick('b-op',0,this)"><img src="Photos/Parents' opinions/opinion_1.jpg"
+              alt="parent opinion 1"></div>
+          <div class="svc-thumb" onclick="pick('b-op',1,this)"><img src="Photos/Parents' opinions/opinion_2.jpg" alt="parent opinion 2">
+          </div>
+          <div class="svc-thumb" onclick="pick('b-op',2,this)"><img src="Photos/Parents' opinions/opinion_3.jpg" alt="parent opinion 3">
+          </div>
+          <div class="svc-thumb" onclick="pick('b-op',3,this)"><img src="Photos/Parents' opinions/opinion_4.jpg" alt="parent opinion 4">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer" role="contentinfo">
+    <p data-t="footer_text">© 2026 نموذج سكن طلابي - جميع الحقوق محفوظة</p>
+    <p data-t="footer_credit" style="font-size:12px; margin-top:4px; opacity:0.75;">Designed &amp; Developed by Lujain Omar Al-Khalifat</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/lo0k_404?stkn=MTY5czFrOWpvb3hzcQ==" target="_blank" rel="noopener noreferrer" class="soc-instagram"
+        aria-label="إنستغرام">
+        <img src="icons/instagram.svg" alt="Instagram"></a>
+      <a href="https://www.facebook.com/share/1bdwPXqzQG/" target="_blank" rel="noopener noreferrer" class="soc-facebook"
+        aria-label="فيسبوك">
+        <img src="icons/facebook.svg" alt="Facebook"></a>
+      <a href="https://wa.me/962775444643" target="_blank" rel="noopener noreferrer" class="soc-whatsapp"
+        aria-label="واتساب">
+        <img src="icons/whatsapp.svg" alt="WhatsApp"></a>
+      <a href="mailto:lo0k.404.tech.dev@gmail.com" target="_blank" class="soc-gmail" aria-label="البريد الإلكتروني">
+        <img src="icons/email.svg" alt="Email us on Gmail" title="Gmail"></a>
+    </div>
+  </footer>
+
+  <script>
+    function pick(blockId, idx, thumbEl) {
+      var blk = document.getElementById(blockId);
+      var items = blk.querySelectorAll('.svc-item');
+      var thumbs = blk.querySelectorAll('.svc-thumb');
+
+      items.forEach(function (el) {
+        el.classList.remove('active');
+        if (el.tagName === 'VIDEO') { el.pause(); el.currentTime = 0; }
+      });
+      thumbs.forEach(function (t) { t.classList.remove('active'); });
+
+      var target = items[idx];
+      if (!target) return;
+      target.classList.add('active');
+      if (target.tagName === 'VIDEO') {
+        target.muted = true; // ensure
+        target.play().catch(function () { });
+      }
+      thumbEl.classList.add('active');
+    }
+  </script>
+    <script>
+        /* Hamburger */
+        (function () { var btn = document.getElementById('hamburger'), nav = document.querySelector('.navbar'); if (!btn || !nav) return; btn.addEventListener('click', function () { var o = nav.classList.toggle('nav-open'); btn.classList.toggle('open', o); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); }); nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { nav.classList.remove('nav-open'); btn.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }); }); })();
+        /* Header H */
+        (function () { function s() { var h = document.querySelector('.site-header'); if (h) document.documentElement.style.setProperty('--header-h', h.offsetHeight + 'px'); } s(); window.addEventListener('resize', s, { passive: true }); })();
+    </script>
+    <script src="Js/java.js"></script>
+</body>
+
+</html>

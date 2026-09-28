@@ -1,0 +1,15 @@
+# Windows / editor cruft
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+*.tmp
+*.bak
+*~
+
+# secrets — never commit these
+.env
+*.key
+*.pem
+
+# dependencies (there are none, but keep it honest)
+node_modules/

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سكن الطالبات</title>
+    <meta name="description"
+        content="سكن الطالبات — بيتك بعيداً عن البيت. راحة ومجتمع وموقع مميز قرب البوابة الشمالية للجامعة.">
+    <meta name="keywords" content="سكن طلابي, غرف طالبات, مرافق, خدمات, نموذج أولي">
+    <meta name="author" content="Student Housing Team">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="سكن الطالبات">
+    <meta property="og:description" content="قرب الحرم الجامعي">
+    <meta property="og:image" content="Photos/Logo.svg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="icon" href="Photos/Logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script src="Js/lang-data.js"></script>
+
+    <script>
+        (function (d) {
+            var s = d.createElement("script");
+            s.setAttribute("data-position", 5);
+            s.setAttribute("data-color", "#F3BF5B");
+            s.setAttribute("data-widget_layout", "full");
+            s.setAttribute("data-account", "6AjWs1Mzxq");
+            s.setAttribute("src", "https://cdn.userway.org/widget.js");
+            (d.body || d.head).appendChild(s);
+        })(document);
+    </script>
+    <style>
+        
+        /* ══ HERO — نفس السلوك على كل الأجهزة ══ */
+        .hero-container {
+            width: 100%;
+            position: relative;
+            line-height: 0;
+            background: #000;
+        }
+
+        /* الفيديو يحافظ على نسبته الأصلية على كل الأجهزة */
+        .hero-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(2, 9, 28, .08) 0%, rgba(2, 9, 28, .42) 45%, rgba(2, 9, 28, .72) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            text-align: center;
+            color: #fff;
+            width: 90%;
+            max-width: 660px;
+            pointer-events: none;
+            animation: fadeUp .9s ease .2s both;
+            padding: 0 8px;
+        }
+
+        .hero-overlay-text h1 {
+            font-family: 'Cairo', serif;
+            font-size: clamp(1.05rem, 4.5vw, 2.6rem);
+            font-weight: 900;
+            text-shadow: 0 2px 16px rgba(0, 0, 0, .9);
+            margin-bottom: 6px;
+            line-height: 1.35;
+        }
+
+        .hero-overlay-text p {
+            font-family: 'Cairo', sans-serif;
+            font-size: clamp(.72rem, 2.1vw, 1rem);
+            text-shadow: 0 1px 10px rgba(0, 0, 0, .9);
+            opacity: .94;
+            margin: 3px 0;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translate(-50%, calc(-50% + 16px));
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        /* ══ BUILDING SECTIONS ══ */
+        .building-section {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            min-height: 480px;
+            overflow: hidden;
+        }
+
+        .building-section.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .building-img-wrap {
+            flex: 1 1 50%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .building-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .6s ease;
+        }
+
+        .building-img-wrap:hover img {
+            transform: scale(1.04);
+        }
+
+        .building-info {
+            flex: 1 1 50%;
+            padding: 52px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #ffffff;
+            position: relative;
+        }
+
+        .building-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #F3BF5B, #d4a84f);
+        }
+
+        [dir="ltr"] .building-info::before {
+            right: auto;
+            left: 0;
+        }
+
+        .building-info.dark {
+            background: #02091C;
+        }
+
+        .building-info.dark::before {
+            background: linear-gradient(to bottom, #F3BF5B, #294062);
+        }
+
+        .info-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(243, 191, 91, .12);
+            border: 1px solid rgba(243, 191, 91, .35);
+            color: #d4a84f;
+            font-family: 'Cairo', sans-serif;
+            font-size: .78rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            width: fit-content;
+            letter-spacing: .5px;
+        }
+
+        .building-info.dark .info-tag {
+            color: #F3BF5B;
+            border-color: rgba(243, 191, 91, .25);
+        }
+
+        .building-info h2 {
+            font-family: 'Cairo', serif;
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-weight: 900;
+            color: #02091C;
+            line-height: 1.35;
+            margin-bottom: 14px;
+        }
+
+        .building-info h2 .gold {
+            color: #d4a84f;
+        }
+
+        .building-info.dark h2 {
+            color: #ffffff;
+        }
+
+        .building-info.dark h2 .gold {
+            color: #F3BF5B;
+        }
+
+        .building-info p.desc {
+            font-family: 'Cairo', sans-serif;
+            font-size: clamp(.88rem, 1.4vw, 1rem);
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .building-info.dark p.desc {
+            color: rgba(230, 238, 245, .75);
+        }
+
+        .feat-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+            margin-bottom: 28px;
+        }
+
+        .feat-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+        }
+
+        .feat-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(243, 191, 91, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .feat-icon svg {
+            width: 17px;
+            height: 17px;
+        }
+
+        .feat-text {
+            font-family: 'Cairo', sans-serif;
+            font-size: .85rem;
+            color: #2d3748;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .feat-text small {
+            display: block;
+            font-weight: 400;
+            color: #718096;
+            font-size: .75rem;
+        }
+
+        .building-info.dark .feat-text {
+            color: #E6EEF5;
+        }
+
+        .building-info.dark .feat-text small {
+            color: #80A9C5;
+        }
+
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0f4f8;
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-family: 'Cairo', sans-serif;
+            font-size: .85rem;
+            color: #294062;
+            font-weight: 700;
+            border: 1px solid #dde3ec;
+            text-decoration: none;
+            transition: background .2s, transform .15s;
+            width: fit-content;
+        }
+
+        .location-badge:hover {
+            background: #e2e8f0;
+            transform: translateY(-1px);
+        }
+
+        /* ══ MOBILE ══ */
+        @media (max-width:768px) {
+
+            .building-section,
+            .building-section.reverse {
+                flex-direction: column;
+            }
+
+            .building-img-wrap {
+                min-height: 260px;
+                flex: none;
+            }
+
+            .building-info {
+                padding: 32px 22px;
+            }
+
+            .building-info::before {
+                width: 100%;
+                height: 4px;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: auto;
+            }
+        }
+
+        @media (max-width:480px) {
+            .hero-overlay-text h1 {
+                font-size: clamp(.9rem, 5.8vw, 1.25rem);
+            }
+
+            .hero-overlay-text p {
+                font-size: .72rem;
+            }
+
+            .feat-item {
+                grid-template-columns: 1fr;
+            }
+
+            .building-info h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* ══ PARTNERS SECTION ══ */
+        .partners-section {
+            padding: 64px 24px 72px;
+            background: #02091C;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partners-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(243, 191, 91, .07) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .partners-heading {
+            font-family: 'Cairo', sans-serif;
+            font-size: .85rem;
+            font-weight: 700;
+            color: #F3BF5B;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .partners-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .partners-title .gold {
+            color: #F3BF5B;
+        }
+
+        .partners-desc {
+            font-family: 'Cairo', sans-serif;
+            font-size: .9rem;
+            color: rgba(255, 255, 255, .45);
+            margin-bottom: 48px;
+            max-width: 460px;
+            margin-inline: auto;
+        }
+
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 24px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .partner-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            width: 230px;
+            padding: 30px 20px 22px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(243, 191, 91, .12);
+            border-radius: 20px;
+            text-decoration: none;
+            transition: transform .25s, background .25s, border-color .25s, box-shadow .25s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partner-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(145deg, rgba(243, 191, 91, .06) 0%, transparent 55%);
+            opacity: 0;
+            transition: opacity .3s;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-7px);
+            background: rgba(243, 191, 91, .07);
+            border-color: rgba(243, 191, 91, .38);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .4), 0 0 0 1px rgba(243, 191, 91, .12);
+        }
+
+        .partner-card:hover::before {
+            opacity: 1;
+        }
+
+        .partner-logo-wrap {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, .35);
+            flex-shrink: 0;
+            transition: box-shadow .25s;
+        }
+
+        .partner-card:hover .partner-logo-wrap {
+            box-shadow: 0 8px 28px rgba(243, 191, 91, .25);
+        }
+
+        .partner-logo-wrap img {
+            width: 78px;
+            height: 78px;
+            object-fit: contain;
+        }
+
+        .partner-info {
+            text-align: center;
+        }
+
+        .partner-name {
+            font-family: 'Cairo', sans-serif;
+            font-size: .92rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .partner-type {
+            font-family: 'Cairo', sans-serif;
+            font-size: .72rem;
+            font-weight: 600;
+            color: rgba(243, 191, 91, .65);
+        }
+
+        .partner-visit {
+            font-family: 'Cairo', sans-serif;
+            font-size: .72rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .25);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: color .2s;
+        }
+
+        .partner-card:hover .partner-visit {
+            color: #F3BF5B;
+        }
+
+        @media (max-width: 600px) {
+            .partners-grid {
+                gap: 14px;
+            }
+
+            .partner-card {
+                width: calc(50% - 7px);
+                padding: 20px 12px 16px;
+            }
+
+            .partner-logo-wrap {
+                width: 72px;
+                height: 72px;
+            }
+
+            .partner-logo-wrap img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .partners-title {
+                font-size: 1.35rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .partner-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══ HEADER ══ -->
+    <div class="site-header">
+        <div class="toolbar" style="display:flex;align-items:center;justify-content:space-between;padding:8px 16px;">
+            <img src="Photos/Logo.svg" alt="شعار السكن">
+            <div class="lang-switcher" id="langSwitcher">
+                <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <span id="langFlag">🇯🇴</span>
+                    <span id="langLabel">العربية</span>
+                    <span class="lang-arrow">▼</span>
+                </button>
+                <div class="lang-dropdown" role="listbox" id="langDropdown">
+                    <div class="lang-option active" data-lang="ar" role="option" tabindex="0"><span
+                            class="flag">🇯🇴</span> العربية</div>
+                    <div class="lang-option" data-lang="en" role="option" tabindex="0"><span class="flag">EN</span>
+                        English</div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar" role="navigation">
+            <button class="hamburger" id="hamburger" aria-label="فتح القائمة" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="index.html" data-t="nav_home" class="active">الرئيسية</a>
+            <a href="Rooms_Page.html" data-t="nav_rooms">الغرف</a>
+            <a href="Services_Page.html" data-t="nav_services">الخدمات والمرافق</a>
+            <a href="News_Page.html" data-t="nav_news">الأخبار والفعاليات</a>
+            <a href="Guide_Page.html" data-t="nav_guide">دليل السكن</a>
+            <a href="Contact_Page.html" data-t="nav_contact">تواصل معنا</a>
+        </nav>
+    </div>
+
+    <!-- ══ HERO ══ -->
+    <main id="content-area">
+        <div class="hero-container">
+            <video id="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+                <source src="Videos/Tours/Main Video.mp4" type="video/mp4">
+                <p data-t="video_fallback">متصفحك لا يدعم تشغيل الفيديو.</p>
+            </video>
+            <div class="hero-overlay-text">
+                <h1 data-t="home_title">مرحباً بك في سكن الطالبات</h1>
+                <p data-t="home_sub1">بيتك بعيداً عن البيت — راحة، مجتمع، وموقع مميز.</p>
+                <p data-t="home_sub2">أفضل تجربة سكن طلابي قرب الجامعة.</p>
+
+            </div>
+            <audio id="bg-music" loop preload="none">
+                <source src="Audio/BgAudio.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- زر الصوت — ثابت أسفل يمين الشاشة.
+             بلا data-t عن قصد: نظام الترجمة يستبدل محتوى أي عنصر يحمل data-t
+             بنص الترجمة، فكان يحقن الكلام داخل الزر فيدفع الأيقونة خارج الدائرة.
+             النصوص تُضبط من java.js عبر aria-label و title فقط. -->
+        <button class="music-btn" id="music-btn" aria-label="تشغيل الموسيقى"
+            aria-pressed="false" title="تشغيل / إيقاف الموسيقى">
+            <img id="music-icon" src="icons/mute.gif" alt="الصوت مكتوم" width="34" height="34">
+        </button>
+
+        <!-- ══ SECTION 1: صورة خارجية + معلومات ══ -->
+        <section class="building-section">
+            <div class="building-img-wrap">
+                <img src="Photos/Housing/outside_1.jpg"
+                    alt="واجهة سكن الطالبات — قرب البوابة الشمالية للجامعة" loading="lazy">
+            </div>
+            <div class="building-info">
+                <div class="info-tag" data-t="tag_student"><svg viewBox="0 0 24 24" width="13" height="13" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    </svg>سكن طالبات مميز</div>
+                <h2><span data-t="about_title_1">لأنكِ تستحقين</span> <span class="gold"
+                        data-t="about_title_2">الأفضل</span><br><span data-t="about_title_3">في مسيرتكِ الجامعية</span>
+                </h2>
+                <p class="desc" data-t="about_desc">
+                    سكن الطالبات صرح سكني فاخر يضم 70 غرفة بتصميم فندقي راقٍ，
+                    مجهزة بالكامل لتوفر لكِ بيئة دراسية هادئة وحياة مريحة.
+                    كل غرفة تحتوي على مطبخ كامل، غسالة أوتوماتيك، إنترنت سريع，
+                    وخزائن حائط متكاملة — كل شيء بين يديكِ.
+                </p>
+                <div class="features-grid">
+                    <!-- أمان وحماية -->
+                    <div class="feat-item">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#F3BF5B" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <div class="feat-text">
+                            <strong data-t="feat1_title">أمان وحماية</strong>
+                            <small data-t="feat1_sub">حراسة خاصة وأوقات ثابتة</small>
+                        </div>
+                    </div>
+
+                    <!-- نادي صحي -->
+                    <div class="feat-item">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#F3BF5B" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 5v14M18 5v14M6 12h12M3 5h4M17 5h4M3 19h4M17 19h4" />
+                            </svg>
+                        </div>
+                        <div class="feat-text">
+                            <strong data-t="feat2_title">نادي صحي</strong>
+                            <small data-t="feat2_sub">أجهزة رياضية حديثة للطالبات</small>
+                        </div>
+                    </div>
+
+                    <!-- مطبخ مجهز (أيقونة أدق) -->
+                    <div class="feat-item">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#F3BF5B" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M6 13.87A4 4 0 0 1 7.41 7a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 7 4 4 0 0 1 18 13.87V21H6Z" />
+                                <line x1="6" y1="17" x2="18" y2="17" />
+                            </svg>
+                        </div>
+                        <div class="feat-text">
+                            <strong data-t="feat3_title">مطبخ مجهز</strong>
+                            <small data-t="feat3_sub">ميكروويف، غاز، وغسالة</small>
+                        </div>
+                    </div>
+
+                    <!-- إنترنت مجاني -->
+                    <div class="feat-item">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#F3BF5B" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01" />
+                            </svg>
+                        </div>
+                        <div class="feat-text">
+                            <strong data-t="feat4_title">إنترنت مجاني</strong>
+                            <small data-t="feat4_sub">سرعات فائقة على مدار الساعة</small>
+                        </div>
+                    </div>
+
+                    <!-- مصاعد فاخرة (أيقونة أدق) -->
+                    <div class="feat-item">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#F3BF5B" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <path d="m9 10 3-3 3 3" />
+                                <path d="m9 14 3 3 3-3" />
+                            </svg>
+                        </div>
+                        <div class="feat-text">
+                            <strong data-t="feat5_title">مصاعد فاخرة</strong>
+                            <small data-t="feat5_sub">خدمة سريعة لراحة الطالبات</small>
+                        </div>
+                    </div>
+
+                    <!-- مشرفات أكاديميات -->
+                    <div class="feat-item">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#F3BF5B" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                        <div class="feat-text">
+                            <strong data-t="feat6_title">مشرفات سكن</strong>
+                            <small data-t="feat6_sub">كادر ذو خبرة وكفاءة عالية</small>
+                        </div>
+                    </div>
+                </div>
+                <a class="location-badge" href="https://example.com/studenthousing/location" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="icons/map.svg" alt="موقع" width="16" height="16">
+                    <span data-t="location_text">قرب الحرم الجامعي</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ══ SECTION 2: صورة 3D + رؤية (داكن) ══ -->
+        <section class="building-section reverse" style="background:#f0f4f8;">
+            <div class="building-img-wrap">
+                <img src="Photos/Housing/3D.svg" alt="نموذج ثلاثي الأبعاد لسكن الطالبات" loading="lazy"
+                    style="object-fit:contain;background:#000;padding:24px;">
+            </div>
+            <div class="building-info dark">
+                <div class="info-tag" data-t="tag_vision"><svg viewBox="0 0 24 24" width="13" height="13" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg> رؤيتنا</div>
+                <h2><span data-t="vision_title_1">بُني ليكون</span> <span class="gold" data-t="vision_title_2">بيتكِ
+                        الثاني</span></h2>
+                <p class="desc" data-t="vision_desc">
+                    صُمم السكن بعناية فائقة ليوفر لكل طالبة مساحة تشعر فيها بالأمان والانتماء.
+                    من الغرف الفاخرة إلى المرافق المشتركة الراقية، كل تفصيلة تعكس التزامنا
+                    بتقديم أعلى معايير الراحة والجودة لطالبات الجامعة.
+                </p>
+                <div class="features-grid">
+                    <!-- غرف متنوعة -->
+                    <div class="feat-item">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#F3BF5B" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                <polyline points="9 22 9 12 15 12 15 22" />
+                            </svg>
+                        </div>
+                        <div class="feat-text">
+                            <strong data-t="feat7_title">غرف متنوعة</strong>
+                            <small data-t="feat7_sub">مفردة، مزدوجة، وثلاثية</small>
+                        </div>
+                    </div>
+
+                    <!-- طاقة شمسية -->
+                    <div class="feat-item">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#F3BF5B" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5" />
+                                <path
+                                    d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                            </svg>
+                        </div>
+                        <div class="feat-text">
+                            <strong data-t="feat8_title">طاقة شمسية</strong>
+                            <small data-t="feat8_sub">مياه وكهرباء مجانية</small>
+                        </div>
+                    </div>
+
+                    <!-- صالة استقبال للأهالي (أيقونة عائلية) -->
+                    <div class="feat-item">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#F3BF5B" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                        <div class="feat-text">
+                            <strong data-t="feat9_title">صالة استقبال للأهالي</strong>
+                            <small data-t="feat9_sub">مجهزة بالكامل لاستقبالكم</small>
+                        </div>
+                    </div>
+
+                    <!-- تواصل مباشر -->
+                    <div class="feat-item">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#F3BF5B" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 5a2 2 0 0 1 1.95-2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.6a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17v-.08z" />
+                            </svg>
+                        </div>
+                        <div class="feat-text">
+                            <strong data-t="feat10_title">تواصل مباشر</strong>
+                            <small dir="ltr"
+                                style="unicode-bidi:embed; display:block; text-align:right; line-height:1.7;">+962 7 754 44643</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ PARTNERS SECTION ══ -->
+        <section class="partners-section" aria-label="شركاؤنا">
+            <p class="partners-heading" data-t="partners_label">شركاؤنا</p>
+            <h2 class="partners-title">
+                <span data-t="partners_title_1">نفتخر بشراكتنا مع </span><span class="gold"
+                    data-t="partners_title_2">أفضل الشركات</span>
+            </h2>
+            <p class="partners-desc" data-t="partners_desc">نتعاون مع شركات رائدة لتوفير بيئة سكنية آمنة ومتميزة
+                لطالباتنا</p>
+
+            <div class="partners-grid">
+
+                <!-- GuardPro -->
+                <a href="https://example.com/studenthousing/partner/security" target="_blank" rel="noopener noreferrer" class="partner-card"
+                    aria-label="GuardPro Security & Protection">
+                    <div class="partner-logo-wrap" style="background:#000; padding:6px;">
+                        <img src="Photos/Our partners/GuardPro_logo.svg" alt="GuardPro Security"
+                             style="width:100%;height:100%;object-fit:contain;display:block;">
+                    </div>
+                    <div class="partner-info">
+                        <p class="partner-name">GuardPro</p>
+                        <p class="partner-type" data-t="partner_type_security">أمن وحماية</p>
+                    </div>
+                    <span class="partner-visit" data-t="partner_visit">زيارة الموقع ↗</span>
+                </a>
+
+                <!-- Nova Agency -->
+                <a href="https://example.com/studenthousing/partner/agency" target="_blank" rel="noopener noreferrer"
+                    class="partner-card" aria-label="Nova Creative Agency">
+                    <div class="partner-logo-wrap" style="background:#111;">
+                        <img src="Photos/Our partners/Nova_agency_logo.svg" alt="Nova Agency">
+                    </div>
+                    <div class="partner-info">
+                        <p class="partner-name">Nova Agency</p>
+                        <p class="partner-type" data-t="partner_type_creative">وكالة إبداعية</p>
+                    </div>
+                    <span class="partner-visit" data-t="partner_visit">زيارة الموقع ↗</span>
+                </a>
+
+                <!-- EquipCo -->
+                <a href="https://example.com/studenthousing/partner/equipment" target="_blank" rel="noopener noreferrer" class="partner-card"
+                    aria-label="EquipCo Equipment Co.">
+                    <div class="partner-logo-wrap" style="background:#fff; padding:0; overflow:hidden;">
+                        <img src="Photos/Our partners/EquipCo_logo.svg" alt="EquipCo"
+                             style="width:90px;height:90px;object-fit:cover;display:block;">
+                    </div>
+                    <div class="partner-info">
+                        <p class="partner-name">شركة إكويب</p>
+                        <p class="partner-type" data-t="partner_type_tech">أجهزة ومعدات</p>
+                    </div>
+                    <span class="partner-visit" data-t="partner_visit">زيارة الموقع ↗</span>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="footer" role="contentinfo">
+        <p data-t="footer_text">© 2026 نموذج سكن طلابي - جميع الحقوق محفوظة</p>
+        <p data-t="footer_credit" style="font-size:12px; margin-top:4px; opacity:0.75;">Designed &amp; Developed by Lujain Omar Al-Khalifat</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/lo0k_404?stkn=MTY5czFrOWpvb3hzcQ==" target="_blank" rel="noopener noreferrer"
+                class="soc-instagram" aria-label="إنستغرام">
+                <img src="icons/instagram.svg" alt="Instagram"></a>
+            <a href="https://www.facebook.com/share/1bdwPXqzQG/" target="_blank" rel="noopener noreferrer"
+                class="soc-facebook" aria-label="فيسبوك">
+                <img src="icons/facebook.svg" alt="Facebook"></a>
+            <a href="https://wa.me/962775444643" target="_blank" rel="noopener noreferrer" class="soc-whatsapp"
+                aria-label="واتساب">
+                <img src="icons/whatsapp.svg" alt="WhatsApp"></a>
+            <a href="mailto:lo0k.404.tech.dev@gmail.com" target="_blank" class="soc-gmail" aria-label="بريد إلكتروني">
+                <img src="icons/email.svg" alt="Email us on Gmail" title="Gmail"></a>
+        </div>
+    </footer>
+
+    <!-- ══ SCRIPTS ══ -->
+    <script>
+        (function () {
+            var btn = document.getElementById('hamburger'), nav = document.querySelector('.navbar');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', function () {
+                var o = nav.classList.toggle('nav-open');
+                btn.classList.toggle('open', o);
+                btn.setAttribute('aria-expanded', o ? 'true' : 'false');
+            });
+            nav.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () { nav.classList.remove('nav-open'); btn.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+            });
+        })();
+        /* احسب ارتفاع الهيدر وضعه كـ CSS variable لحساب الفيديو */
+        (function () {
+            function setHeaderH() {
+                var h = document.querySelector('.site-header');
+                if (h) document.documentElement.style.setProperty('--header-h', h.offsetHeight + 'px');
+            }
+            setHeaderH();
+            window.addEventListener('resize', setHeaderH, { passive: true });
+        })();
+        (function () {
+            var h = document.querySelector('.scroll-hint'); if (!h) return;
+            window.addEventListener('scroll', function () { h.style.opacity = window.scrollY > 50 ? '0' : '.8'; }, { passive: true });
+        })();
+    </script>
+
+    <script src="Js/java.js"></script>
+
+    <!-- ══ MUSIC BUTTON SCRIPT ══ -->
+    <script>
+        (function () {
+            var btn = document.getElementById('music-btn');
+            var audio = document.getElementById('bg-music');
+            var icon = document.getElementById('music-icon');
+            var playing = false;
+
+            if (!btn || !audio || !icon) return;
+
+            // الحالة الابتدائية: مكتوم
+            icon.src = 'icons/mute.gif';
+            icon.alt = 'الصوت مكتوم';
+
+            btn.addEventListener('click', function () {
+                if (playing) {
+                    // أوقف الصوت
+                    audio.pause();
+                    icon.src = 'icons/mute.gif';
+                    icon.alt = 'الصوت مكتوم';
+                    btn.setAttribute('aria-label', 'تشغيل الموسيقى');
+                    playing = false;
+                } else {
+                    // شغّل الصوت
+                    audio.play().catch(function (e) { console.warn('Audio error:', e); });
+                    icon.src = 'icons/sound.gif';
+                    icon.alt = 'الصوت مفتوح';
+                    btn.setAttribute('aria-label', 'إيقاف الموسيقى');
+                    playing = true;
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

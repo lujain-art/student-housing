@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل السكن — سكن الطالبات</title>
+    <meta name="description"
+        content="دليل سكن الطالبات — أوقات الدوام، قواعد السكن، خطوات الحجز، والأسئلة الشائعة.">
+    <meta name="keywords" content="دليل السكن, قواعد السكن, حياة الطالبات, نموذج أولي">
+    <meta name="author" content="Student Housing Team">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="دليل السكن — سكن الطالبات">
+    <meta property="og:description" content="كل ما تحتاجينه عن السكن — أوقات، قواعد، وخطوات الحجز.">
+    <meta property="og:image" content="Photos/Logo.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="icon" href="Photos/Logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script src="Js/lang-data.js"></script>
+
+    <script>
+      (function (d) {
+          var s = d.createElement("script");
+          s.setAttribute("data-position", 5);
+          s.setAttribute("data-color", "#F3BF5B");
+          s.setAttribute("data-widget_layout", "full");
+          s.setAttribute("data-account", "6AjWs1Mzxq");
+          s.setAttribute("src", "https://cdn.userway.org/widget.js");
+          (d.body || d.head).appendChild(s);
+      })(document);
+    </script>
+        <style>
+        /* Guide layout */
+        .guide-wrapper {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 48px 24px 70px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 36px;
+            align-items: start;
+        }
+
+        /* Sticky sidebar nav */
+        .guide-nav {
+            position: sticky;
+            top: calc(var(--header-h, 120px) + 16px);
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(2, 9, 28, .07);
+            border: 1px solid rgba(243, 191, 91, .15);
+            overflow: hidden;
+        }
+
+        .guide-nav-title {
+            background: #02091C;
+            color: #F3BF5B;
+            font-family: 'Cairo', serif;
+            font-weight: 800;
+            font-size: .9rem;
+            padding: 14px 18px;
+            letter-spacing: .3px;
+        }
+
+        .guide-nav a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 18px;
+            font-family: 'Cairo', sans-serif;
+            font-size: .85rem;
+            font-weight: 600;
+            color: #294062;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(243, 191, 91, .08);
+            transition: background .15s, color .15s;
+        }
+
+        .guide-nav a:last-child {
+            border-bottom: none;
+        }
+
+        .guide-nav a:hover,
+        .guide-nav a.active {
+            background: rgba(243, 191, 91, .1);
+            color: #d4a84f;
+        }
+
+        .guide-nav a .nav-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #F3BF5B;
+            flex-shrink: 0;
+        }
+
+        /* Guide sections */
+        .guide-section {
+            margin-bottom: 52px;
+            scroll-margin-top: calc(var(--header-h, 120px) + 20px);
+        }
+
+        .guide-section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid rgba(243, 191, 91, .2);
+        }
+
+        .gs-icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(243, 191, 91, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .gs-icon-wrap img {
+            width: 26px;
+            height: 26px;
+            object-fit: contain;
+        }
+
+        .guide-section h2 {
+            font-family: 'Cairo', serif;
+            font-size: clamp(1.1rem, 2vw, 1.45rem);
+            font-weight: 900;
+            color: #02091C;
+            margin: 0;
+        }
+
+        /* Step list */
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px 18px;
+            box-shadow: 0 2px 12px rgba(2, 9, 28, .05);
+            border: 1px solid rgba(243, 191, 91, .1);
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #F3BF5B;
+            color: #02091C;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 900;
+            font-size: .88rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            font-family: 'Cairo', sans-serif;
+            font-size: .9rem;
+            color: #2d3748;
+            line-height: 1.75;
+        }
+
+        .step-text strong {
+            color: #02091C;
+            font-weight: 800;
+        }
+
+        /* Info grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .info-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px 16px;
+            border: 1px solid rgba(243, 191, 91, .14);
+            box-shadow: 0 2px 10px rgba(2, 9, 28, .05);
+        }
+
+        .info-card h4 {
+            font-family: 'Cairo', sans-serif;
+            font-size: .85rem;
+            font-weight: 800;
+            color: #02091C;
+            margin-bottom: 6px;
+        }
+
+        .info-card p {
+            font-family: 'Cairo', sans-serif;
+            font-size: .82rem;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        /* Rules list */
+        .rules-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .rule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-family: 'Cairo', sans-serif;
+            font-size: .9rem;
+            color: #2d3748;
+            line-height: 1.7;
+            padding: 12px 16px;
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid rgba(243, 191, 91, .1);
+        }
+
+        .rule-item .rule-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .rule-allowed .rule-icon {
+            color: #22c55e;
+        }
+
+        .rule-forbidden .rule-icon {
+            color: #ef4444;
+        }
+
+        .rule-note .rule-icon {
+            color: #F3BF5B;
+        }
+
+        /* FAQ accordion */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid rgba(243, 191, 91, .15);
+            overflow: hidden;
+        }
+
+        .faq-q {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 18px;
+            font-family: 'Cairo', sans-serif;
+            font-size: .9rem;
+            font-weight: 700;
+            color: #02091C;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: right;
+            gap: 10px;
+            transition: background .15s;
+        }
+
+        .faq-q:hover {
+            background: rgba(243, 191, 91, .05);
+        }
+
+        .faq-arrow {
+            font-size: .8rem;
+            color: #d4a84f;
+            transition: transform .3s;
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-a {
+            display: none;
+            padding: 0 18px 15px;
+            font-family: 'Cairo', sans-serif;
+            font-size: .87rem;
+            color: #4a5568;
+            line-height: 1.8;
+            border-top: 1px solid rgba(243, 191, 91, .1);
+        }
+
+        .faq-item.open .faq-a {
+            display: block;
+        }
+
+        /* Photo strip in guide */
+        .guide-photo-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .guide-photo-strip img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: zoom-in;
+            transition: transform .3s;
+        }
+
+        .guide-photo-strip img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Contact card */
+        .contact-card {
+            background: #02091C;
+            border-radius: 16px;
+            padding: 28px 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-card img {
+            width: 52px;
+            height: 52px;
+            object-fit: cover;
+        }
+
+        .contact-card-text h4 {
+            font-family: 'Cairo', serif;
+            font-size: 1rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .contact-card-text p {
+            font-family: 'Cairo', sans-serif;
+            font-size: .85rem;
+            color: rgba(230, 238, 245, .75);
+        }
+
+        .contact-card-btn {
+            margin-right: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25d366;
+            color: #fff;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 800;
+            font-size: .88rem;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background .2s;
+            flex-shrink: 0;
+        }
+
+        .contact-card-btn:hover {
+            background: #1da851;
+        }
+
+        @media(max-width:768px) {
+            .guide-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-nav {
+                position: static;
+            }
+
+            .guide-photo-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-card {
+                flex-wrap: wrap;
+            }
+
+            .contact-card-btn {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="site-header">
+        <div class="toolbar" style="display:flex;align-items:center;justify-content:space-between;padding:8px 16px;">
+            <a href="index.html"><img src="Photos/Logo.svg" alt="شعار السكن"></a>
+            <div class="lang-switcher" id="langSwitcher">
+                <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false"><span
+                        id="langFlag">🇯🇴</span><span id="langLabel">العربية</span><span
+                        class="lang-arrow">▼</span></button>
+                <div class="lang-dropdown" role="listbox">
+                    <div class="lang-option active" data-lang="ar" role="option" tabindex="0"><span
+                            class="flag">🇯🇴</span> العربية</div>
+                    <div class="lang-option" data-lang="en" role="option" tabindex="0"><span class="flag">EN</span>
+                        English</div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar" role="navigation">
+            <button class="hamburger" id="hamburger" aria-label="فتح القائمة"
+                aria-expanded="false"><span></span><span></span><span></span></button>
+            <a href="index.html" data-t="nav_home">الرئيسية</a>
+            <a href="Rooms_Page.html" data-t="nav_rooms">الغرف</a>
+            <a href="Services_Page.html" data-t="nav_services">الخدمات والمرافق</a>
+            <a href="News_Page.html" data-t="nav_news">الأخبار والفعاليات</a>
+            <a href="Guide_Page.html" data-t="nav_guide" class="active">دليل السكن</a>
+            <a href="Contact_Page.html" data-t="nav_contact">تواصل معنا</a>
+        </nav>
+    </div>
+
+    <div class="page-hero">
+        <h1><span data-t="guide_hero_title">دليل</span> <span data-t="guide_hero_span">السكن</span></h1>
+        <p data-t="guide_hero_sub">كل ما تحتاجين معرفته قبل وبعد السكن</p>
+        <div class="gold-line"></div>
+    </div>
+
+    <main>
+        <div class="guide-wrapper">
+
+            <!-- Sidebar -->
+            <aside class="guide-nav" aria-label="قائمة الدليل">
+                <div class="guide-nav-title" data-t="guide_toc_title">محتويات الدليل</div>
+                <a href="#booking"><span class="nav-dot"></span> <span data-t="guide_toc_booking">خطوات الحجز</span></a>
+                <a href="#checkin"><span class="nav-dot"></span> <span data-t="guide_toc_checkin">تسجيل
+                        الدخول</span></a>
+                <a href="#services"><span class="nav-dot"></span> <span data-t="guide_toc_services">ما يشمله
+                        السكن</span></a>
+                <a href="#rules"><span class="nav-dot"></span> <span data-t="guide_toc_rules">القواعد
+                        والأنظمة</span></a>
+                <a href="#hours"><span class="nav-dot"></span> <span data-t="guide_toc_hours">المواعيد
+                        والأوقات</span></a>
+                <a href="#emergency"><span class="nav-dot"></span> <span data-t="guide_toc_emergency">الطوارئ
+                        والتواصل</span></a>
+                <a href="#faq"><span class="nav-dot"></span> <span data-t="guide_toc_faq">الأسئلة الشائعة</span></a>
+            </aside>
+
+            <!-- Content -->
+            <div class="guide-content">
+
+                <!-- Booking -->
+                <section class="guide-section" id="booking">
+                    <div class="guide-section-header">
+                        <div class="gs-icon-wrap"><img src="icons/reservation.svg" alt=""></div>
+                        <h2 data-t="guide_sec_booking">خطوات الحجز</h2>
+                    </div>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-num">1</div>
+                            <div class="step-text" data-t="guide_step1">تواصلي معنا عبر واتساب أو الهاتف على الرقم +962 7 754 44643 أو من خلال صفحة تواصل معنا.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">2</div>
+                            <div class="step-text" data-t="guide_step2">اختاري نوع الغرفة المناسبة: مفردة رويال، مفردة
+                                عادية، مزدوجة VIP، مزدوجة عادية، أو ثلاثية.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">3</div>
+                            <div class="step-text" data-t="guide_step3">استلمي تفاصيل الأسعار والمتاح من الإدارة وتأكيد
+                                الحجز.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">4</div>
+                            <div class="step-text" data-t="guide_step4">أحضري معكِ عند الوصول: صورة عن الهوية الوطنية،
+                                صورة عن البطاقة الجامعية، وإيصال الدفع.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">5</div>
+                            <div class="step-text" data-t="guide_step5">استلمي مفتاح الغرفة وبطاقة الوصول البيومترية
+                                وابدئي حياتكِ الجامعية بأمان وراحة.</div>
+                        </div>
+                    </div>
+                    <div class="guide-photo-strip">
+                        <img src="Photos/Housing/Reception_1.jpg" alt="الاستقبال" onclick="openLB(this.src)">
+                        <img src="Photos/Housing/Reception_2.jpg" alt="الاستقبال" onclick="openLB(this.src)">
+                        <img src="Photos/Housing/Reception_3.jpg" alt="الاستقبال" onclick="openLB(this.src)">
+                    </div>
+                </section>
+
+                <!-- Check-in -->
+                <section class="guide-section" id="checkin">
+                    <div class="guide-section-header">
+                        <div class="gs-icon-wrap"><img src="icons/check-in-reception.svg" alt=""></div>
+                        <h2 data-t="guide_sec_checkin">تسجيل الدخول والاستقبال</h2>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4 data-t="guide_checkin_h1">موعد الدخول</h4>
+                            <p data-t="guide_checkin_p1">يبدأ تسجيل الدخول من الساعة 7 صباحاً في يوم الانتقال المحدد مع
+                                الإدارة.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_checkin_h2">موعد المغادرة</h4>
+                            <p data-t="guide_checkin_p2">يجب إخلاء الغرفة قبل الساعة 12 ظهراً في يوم انتهاء الإقامة.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_checkin_h3">وثائق مطلوبة</h4>
+                            <p data-t="guide_checkin_p3">هوية وطنية + بطاقة جامعية + صورة شخصية حديثة.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_checkin_h4">البصمة الإلكترونية</h4>
+                            <p data-t="guide_checkin_p4">يتم تسجيل بصمتكِ فور وصولكِ لضمان دخولكِ الآمن على مدار الساعة.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="guide-photo-strip" style="margin-top:16px;">
+                        <img src="Photos/Security/Fingerprint.jpg" alt="البصمة" onclick="openLB(this.src)">
+                        <img src="Photos/Housing/Lobby_1.jpeg" alt="الردهة" onclick="openLB(this.src)">
+                        <img src="Photos/Housing/Hallway.jpg" alt="الممر" onclick="openLB(this.src)">
+                    </div>
+                </section>
+
+                <!-- Services included -->
+                <section class="guide-section" id="services">
+                    <div class="guide-section-header">
+                        <div class="gs-icon-wrap"><img src="icons/hotel-room.svg" alt=""></div>
+                        <h2 data-t="guide_sec_services">ما يشمله السكن</h2>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4 data-t="guide_inc_h1">مياه وكهرباء</h4>
+                            <p data-t="guide_inc_p1">مجانية بالكامل — لا توجد فواتير إضافية على الإطلاق.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_inc_h2">إنترنت واي فاي</h4>
+                            <p data-t="guide_inc_p2">مجاني وعالي السرعة في جميع أرجاء المبنى 24/7.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_inc_h3">مطبخ كامل</h4>
+                            <p data-t="guide_inc_p3">ميكروويف، غاز، غسالة أوتوماتيك، وثلاجة في كل غرفة.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_inc_h4">تدفئة وتبريد</h4>
+                            <p data-t="guide_inc_p4">أنظمة تدفئة وتكييف في جميع الغرف لجميع الفصول.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_inc_h5">نادي صحي</h4>
+                            <p data-t="guide_inc_p5">متاح لجميع ساكنات السكن بجميع أجهزته الرياضية الحديثة.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_inc_h6">مصاعد</h4>
+                            <p data-t="guide_inc_p6">متاحة على مدار الساعة لجميع الطوابق.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_inc_h7">تنظيف المشترك</h4>
+                            <p data-t="guide_inc_p7">تنظيف يومي للممرات والمرافق المشتركة.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_inc_h8">صيانة</h4>
+                            <p data-t="guide_inc_p8">فريق صيانة متاح لحل أي عطل خلال فترة قصيرة.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_inc_h9">حراسة أمنية</h4>
+                            <p data-t="guide_inc_p9">حراسة خاصة وكاميرات مراقبة 24 ساعة / 7 أيام.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Rules -->
+                <section class="guide-section" id="rules">
+                    <div class="guide-section-header">
+                        <div class="gs-icon-wrap"><img src="icons/rules.png" alt=""></div>
+                        <h2 data-t="guide_sec_rules">القواعد والأنظمة</h2>
+                    </div>
+                    <div class="rules-list">
+                        <div class="rule-item rule-allowed">
+                            <span class="rule-icon">✓</span>
+                            <span data-t="guide_rule1">الالتزام بمواعيد الدخول والخروج المحددة من الإدارة.</span>
+                        </div>
+                        <div class="rule-item rule-allowed">
+                            <span class="rule-icon">✓</span>
+                            <span data-t="guide_rule2">المحافظة على نظافة الغرفة والمرافق المشتركة.</span>
+                        </div>
+                        <div class="rule-item rule-allowed">
+                            <span class="rule-icon">✓</span>
+                            <span data-t="guide_rule3">الإبلاغ الفوري عن أي عطل أو مشكلة لفريق الصيانة.</span>
+                        </div>
+                        <div class="rule-item rule-allowed">
+                            <span class="rule-icon">✓</span>
+                            <span data-t="guide_rule4">استقبال الأهالي في منطقة الاستقبال المخصصة فقط.</span>
+                        </div>
+                        <div class="rule-item rule-forbidden">
+                            <span class="rule-icon">✗</span>
+                            <span data-t="guide_rule5">ممنوع منعاً باتاً إدخال أي أشخاص غير مصرح لهم إلى مناطق السكن
+                                الداخلية.</span>
+                        </div>
+                        <div class="rule-item rule-forbidden">
+                            <span class="rule-icon">✗</span>
+                            <span data-t="guide_rule6">ممنوع إحداث أي ضجيج بعد الساعة 11 مساءً احتراماً لراحة
+                                الزميلات.</span>
+                        </div>
+                        <div class="rule-item rule-forbidden">
+                            <span class="rule-icon">✗</span>
+                            <span data-t="guide_rule7">ممنوع إدخال أجهزة تسبب خطراً أو أضراراً على المبنى.</span>
+                        </div>
+                        <div class="rule-item rule-forbidden">
+                            <span class="rule-icon">✗</span>
+                            <span data-t="guide_rule8">ممنوع التدخين داخل المبنى بجميع طوابقه ومرافقه.</span>
+                        </div>
+                        <div class="rule-item rule-note">
+                            <span class="rule-icon">!</span>
+                            <span data-t="guide_rule9">أي مخالفة للأنظمة قد تستوجب الإنذار أو إنهاء العقد حسب تقدير
+                                الإدارة.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hours -->
+                <section class="guide-section" id="hours">
+                    <div class="guide-section-header">
+                        <div class="gs-icon-wrap"><img src="icons/time.svg" alt=""></div>
+                        <h2 data-t="guide_sec_hours">المواعيد والأوقات</h2>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4 data-t="guide_hours_h1">باب المبنى الرئيسي</h4>
+                            <p data-t="guide_hours_p1">يفتح: 7:00 صباحاً — يغلق: 9:00 مساءً</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_hours_h2">الدخول بعد الإغلاق</h4>
+                            <p data-t="guide_hours_p2">يتم بالبصمة الإلكترونية فقط مع إبلاغ الإدارة مسبقاً.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_hours_h3">النادي الصحي</h4>
+                            <p data-t="guide_hours_p3">24 ساعة / 7 أيام.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_hours_h4">استقبال الأهالي</h4>
+                            <p data-t="guide_hours_p4">7:00 صباحاً حتى 9:00 مساءً يومياً.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_hours_h5">مكتب الإدارة</h4>
+                            <p data-t="guide_hours_p5">24 ساعة / 7 أيام.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4 data-t="guide_hours_h6">الطوارئ</h4>
+                            <p data-t="guide_hours_p6">متاحة على مدار 24 ساعة / 7 أيام عبر الحراسة.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Emergency -->
+                <section class="guide-section" id="emergency">
+                    <div class="guide-section-header">
+                        <div class="gs-icon-wrap"><img src="icons/emergency.png" alt=""></div>
+                        <h2 data-t="guide_sec_emergency">الطوارئ والتواصل</h2>
+                    </div>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-num" style="background:#ef4444;color:#fff;">!</div>
+                            <div class="step-text" data-t="guide_emg_step0">في حالات الطوارئ الأمنية أو الطبية تواصلي مع
+                                الحارس المناوب مباشرة في مكتب الأمن.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">1</div>
+                            <div class="step-text" data-t="guide_emg_step1">للإبلاغ عن عطل أو مشكلة في الغرفة اتصلي بـ
+                                فريق الصيانة عبر الإدارة.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">2</div>
+                            <div class="step-text" data-t="guide_emg_step2">لأي استفسار إداري أو حجز تواصلي عبر واتساب:
+                                +962 7 754 44643 أو +962 7 754 44643.</div>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <img src="Photos/Housing/Reception_4.jpeg" alt="الإدارة">
+                        <div class="contact-card-text">
+                            <h4 data-t="guide_emg_card_h4">إدارة السكن</h4>
+                            <p data-t="guide_emg_card_p">نحن هنا لخدمتكِ في جميع الأوقات</p>
+                        </div>
+                        <a href="https://wa.me/962775444643?text=مرحباً، أود الاستفسار عن سكن الطالبات"
+                            target="_blank" rel="noopener" class="contact-card-btn">
+                            <img src="icons/whatsapp_white.svg" alt="" width="16" height="16">
+                            <span data-t="guide_emg_card_btn">واتساب الآن</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- FAQ -->
+                <section class="guide-section" id="faq">
+                    <div class="guide-section-header">
+                        <div class="gs-icon-wrap"><img src="icons/faq.svg" alt=""></div>
+                        <h2 data-t="guide_sec_faq">الأسئلة الشائعة</h2>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <button class="faq-q" onclick="toggleFAQ(this)"><span data-t="guide_faq_q1">هل المياه
+                                    والكهرباء مشمولة في السعر؟</span> <span class="faq-arrow">▼</span></button>
+                            <div class="faq-a" data-t="guide_faq_a1">نعم، المياه والكهرباء مجانية بالكامل ومشمولة في
+                                رسوم السكن — لا توجد فواتير إضافية على الإطلاق.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q" onclick="toggleFAQ(this)"><span data-t="guide_faq_q2">هل يمكن زيارة
+                                    الأهالي؟</span> <span class="faq-arrow">▼</span></button>
+                            <div class="faq-a" data-t="guide_faq_a2">نعم، يُسمح باستقبال الأهالي في منطقة الاستقبال
+                                المخصصة من الساعة 7 صباحاً حتى 9 مساءً يومياً.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q" onclick="toggleFAQ(this)"><span data-t="guide_faq_q3">هل النادي الصحي
+                                    مجاني للطالبات؟</span> <span class="faq-arrow">▼</span></button>
+                            <div class="faq-a" data-t="guide_faq_a3">نعم، النادي الصحي متاح مجاناً لجميع ساكنات سكن
+                                المنزل خلال أوقات العمل الرسمية.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q" onclick="toggleFAQ(this)"><span data-t="guide_faq_q4">ما هي أنواع
+                                    الغرف المتاحة؟</span> <span class="faq-arrow">▼</span></button>
+                            <div class="faq-a" data-t="guide_faq_a4">نوفر غرفاً متنوعة: مفردة رويال، مفردة عادية، مزدوجة
+                                VIP، مزدوجة عادية، وثلاثية — لمعرفة التفاصيل والأسعار يرجى التواصل معنا.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q" onclick="toggleFAQ(this)"><span data-t="guide_faq_q5">هل يمكن الدخول
+                                    بعد منتصف الليل؟</span> <span class="faq-arrow">▼</span></button>
+                            <div class="faq-a" data-t="guide_faq_a5">يغلق الباب الرئيسي في منتصف الليل، والدخول بعد ذلك
+                                يتم بالبصمة الإلكترونية فقط مع ضرورة إبلاغ الإدارة مسبقاً.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q" onclick="toggleFAQ(this)"><span data-t="guide_faq_q6">هل يوجد إنترنت
+                                    في كل أرجاء المبنى؟</span> <span class="faq-arrow">▼</span></button>
+                            <div class="faq-a" data-t="guide_faq_a6">نعم، يتوفر واي فاي مجاني وعالي السرعة في جميع الغرف
+                                والمرافق المشتركة على مدار الساعة.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q" onclick="toggleFAQ(this)"><span data-t="guide_faq_q7">كيف يمكن الإبلاغ
+                                    عن عطل في الغرفة؟</span> <span class="faq-arrow">▼</span></button>
+                            <div class="faq-a" data-t="guide_faq_a7">تواصلي مع مكتب الإدارة أو عبر واتساب وسيتم إرسال
+                                فريق الصيانة في أقرب وقت ممكن.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q" onclick="toggleFAQ(this)"><span data-t="guide_faq_q8">هل السكن قريب من
+                                    الجامعة؟</span> <span class="faq-arrow">▼</span></button>
+                            <div class="faq-a" data-t="guide_faq_a8">نعم، يقع السكن بالقرب مباشرةً من البوابة
+                                الشمالية للجامعة — مسافة قصيرة مشياً للحرم الجامعي.</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div><!-- end guide-content -->
+        </div><!-- end guide-wrapper -->
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLB()"><button class="lightbox-close"
+            onclick="closeLB()">✕</button><img id="lbImg" src="" alt=""></div>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="footer" role="contentinfo">
+        <p data-t="footer_text">© 2026 نموذج سكن طلابي - جميع الحقوق محفوظة</p>
+        <p data-t="footer_credit" style="font-size:12px; margin-top:4px; opacity:0.75;">Designed &amp; Developed by Lujain Omar Al-Khalifat</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/lo0k_404?stkn=MTY5czFrOWpvb3hzcQ==" target="_blank" rel="noopener noreferrer"
+                class="soc-instagram" aria-label="إنستغرام">
+                <img src="icons/instagram.svg" alt="Instagram"></a>
+            <a href="https://www.facebook.com/share/1bdwPXqzQG/" target="_blank" rel="noopener noreferrer"
+                class="soc-facebook" aria-label="فيسبوك">
+                <img src="icons/facebook.svg" alt="Facebook"></a>
+            <a href="https://wa.me/962775444643" target="_blank" rel="noopener noreferrer" class="soc-whatsapp"
+                aria-label="واتساب">
+                <img src="icons/whatsapp.svg" alt="WhatsApp"></a>
+            <a href="mailto:lo0k.404.tech.dev@gmail.com" target="_blank" class="soc-gmail" aria-label="بريد إلكتروني">
+                <img src="icons/email.svg" alt="Email us on Gmail" title="Gmail"></a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(btn) {
+            var item = btn.parentElement;
+            var wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(function (i) { i.classList.remove('open'); });
+            if (!wasOpen) item.classList.add('open');
+        }
+        function openLB(s) { document.getElementById('lbImg').src = s; document.getElementById('lightbox').classList.add('open'); }
+        function closeLB() { document.getElementById('lightbox').classList.remove('open'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLB(); });
+
+        /* Sidebar active highlight on scroll */
+        (function () {
+            var sections = document.querySelectorAll('.guide-section');
+            var links = document.querySelectorAll('.guide-nav a');
+            window.addEventListener('scroll', function () {
+                var scrollY = window.scrollY + 180;
+                sections.forEach(function (sec) {
+                    if (sec.offsetTop <= scrollY && sec.offsetTop + sec.offsetHeight > scrollY) {
+                        links.forEach(function (l) { l.classList.remove('active'); });
+                        var active = document.querySelector('.guide-nav a[href="#' + sec.id + '"]');
+                        if (active) active.classList.add('active');
+                    }
+                });
+            }, { passive: true });
+        })();
+    </script>
+    <script>
+        (function () { var btn = document.getElementById('hamburger'), nav = document.querySelector('.navbar'); if (!btn || !nav) return; btn.addEventListener('click', function () { var o = nav.classList.toggle('nav-open'); btn.classList.toggle('open', o); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); }); nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { nav.classList.remove('nav-open'); btn.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }); }); })();
+        (function () { function s() { var h = document.querySelector('.site-header'); if (h) document.documentElement.style.setProperty('--header-h', h.offsetHeight + 'px'); } s(); window.addEventListener('resize', s, { passive: true }); })();
+    </script>
+    <script src="Js/java.js"></script>
+</body>
+
+</html>

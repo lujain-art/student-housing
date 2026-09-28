@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Student Housing">
+  <title>Student Housing</title>
+  <defs>
+    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a2350"/>
+      <stop offset=".55" stop-color="#051c43"/>
+      <stop offset="1" stop-color="#02091c"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd489"/>
+      <stop offset="1" stop-color="#f3bf5b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="200" fill="url(#navy)"/>
+
+  <!-- building block: three stacked volumes, the tallest reads as a tower -->
+  <g fill="none" stroke="url(#gold)" stroke-width="26" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M300 806V470l212-134 212 134v336"/>
+    <path d="M300 806h424"/>
+    <path d="M404 806V556"/>
+    <path d="M620 806V556"/>
+    <path d="M512 336V236"/>
+  </g>
+
+  <!-- roof mark -->
+  <path d="M512 236l-74 58h148z" fill="url(#gold)"/>
+
+  <!-- windows -->
+  <g fill="url(#gold)" opacity=".92">
+    <rect x="436" y="596" width="52" height="52" rx="10"/>
+    <rect x="536" y="596" width="52" height="52" rx="10"/>
+    <rect x="436" y="690" width="52" height="52" rx="10"/>
+    <rect x="536" y="690" width="52" height="52" rx="10"/>
+  </g>
+
+  <!-- baseline accent -->
+  <rect x="228" y="836" width="568" height="18" rx="9" fill="url(#gold)" opacity=".55"/>
+</svg>

@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأخبار والفعاليات — سكن الطالبات</title>
+  <meta name="description" content="آخر أخبار وفعاليات سكن الطالبات — عروض ومستجدات قرب الجامعة.">
+  <meta name="keywords" content="أخبار السكن, فعاليات, حياة الطالبات, نموذج أولي">
+  <meta name="author" content="Student Housing Team">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="الأخبار والفعاليات — سكن الطالبات">
+  <meta property="og:description" content="آخر أخبار وفعاليات سكن الطالبات — نموذج أولي.">
+  <meta property="og:image" content="Photos/Logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="CSS/Style.css">
+  <link rel="icon" href="Photos/Logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <script src="Js/lang-data.js"></script>
+
+  <script>
+    (function (d) {
+        var s = d.createElement("script");
+        s.setAttribute("data-position", 5);
+        s.setAttribute("data-color", "#F3BF5B");
+        s.setAttribute("data-widget_layout", "full");
+        s.setAttribute("data-account", "6AjWs1Mzxq");
+        s.setAttribute("src", "https://cdn.userway.org/widget.js");
+        (d.body || d.head).appendChild(s);
+    })(document);
+  </script>
+    <style>
+    :root {
+      --navy: #02091C;
+      --navy2: #0a1a35;
+      --gold: #F3BF5B;
+      --gold2: #d4a84f;
+      --blue: #294062;
+      --ease: cubic-bezier(.25, .46, .45, .94);
+    }
+
+    /* ── Filter bar ── */
+    .filter-wrap {
+      background: var(--navy);
+      padding: 24px 20px;
+      position: sticky;
+      top: var(--header-h, 120px);
+      z-index: 200;
+      border-bottom: 1px solid rgba(243, 191, 91, .1);
+    }
+
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .filter-btn {
+      font-family: 'Cairo', sans-serif;
+      font-size: .82rem;
+      font-weight: 700;
+      padding: 7px 20px;
+      border-radius: 2px;
+      border: 1px solid rgba(243, 191, 91, .25);
+      background: transparent;
+      color: rgba(230, 238, 245, .7);
+      cursor: pointer;
+      transition: all .2s;
+      letter-spacing: .5px;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .filter-btn.active {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    /* ── Events grid ── */
+    .events-outer {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    /* Section title */
+    .events-cat-title {
+      font-family: 'Cairo', serif;
+      font-size: clamp(.9rem, 1.5vw, 1.1rem);
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      margin-top: 40px;
+    }
+
+    .events-cat-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to left, transparent, rgba(41, 64, 98, .15));
+    }
+
+    .events-cat-title span {
+      color: var(--gold2);
+    }
+
+    /* Grid */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(0, 0, 0, .06);
+      margin-bottom: 2px;
+    }
+
+    /* ── EVENT CARD ── */
+    .ev-card {
+      background: #fff;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ev-card[data-cat].hidden,
+    .ev-feat-card[data-cat].hidden {
+      display: none;
+    }
+
+    /* Media area — fixed height, crossfade */
+    .ev-media {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .ev-media video,
+    .ev-media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .55s var(--ease);
+    }
+
+    .ev-card:hover .ev-media video,
+    .ev-card:hover .ev-media img {
+      transform: scale(1.06);
+    }
+
+    /* Overlay gradient */
+    .ev-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(2, 9, 28, .65) 0%, transparent 55%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Play button for videos */
+    .ev-play {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+    }
+
+    .ev-play-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, .85);
+      background: rgba(2, 9, 28, .55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s, transform .2s;
+      backdrop-filter: blur(4px);
+    }
+
+    .ev-play-circle svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+      margin-right: -2px;
+    }
+
+    .ev-card:hover .ev-play-circle {
+      background: var(--gold);
+      transform: scale(1.1);
+    }
+
+    .ev-card:hover .ev-play-circle svg {
+      fill: var(--navy);
+    }
+
+    /* Badge */
+    .ev-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 4;
+      font-family: 'Cairo', sans-serif;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 2px;
+    }
+
+    .badge-event {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .badge-ann {
+      background: var(--navy);
+      color: var(--gold);
+      border: 1px solid rgba(243, 191, 91, .4);
+    }
+
+    .badge-service {
+      background: var(--blue);
+      color: #fff;
+    }
+
+    /* Card body */
+    .ev-body {
+      padding: 20px 20px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-top: 2px solid transparent;
+      transition: border-color .2s;
+    }
+
+    .ev-card[data-cat="event"] .ev-body {
+      border-top-color: var(--gold);
+    }
+
+    .ev-card[data-cat="announcement"] .ev-body {
+      border-top-color: var(--blue);
+    }
+
+    .ev-card[data-cat="service"] .ev-body {
+      border-top-color: #80A9C5;
+    }
+
+    .ev-year {
+      font-family: 'Cairo', sans-serif;
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--gold2);
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+    }
+
+    .ev-body h3 {
+      font-family: 'Cairo', serif;
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.4;
+      margin-bottom: 8px;
+      flex: 1;
+    }
+
+    .ev-body p {
+      font-family: 'Cairo', sans-serif;
+      font-size: .82rem;
+      color: #718096;
+      line-height: 1.75;
+    }
+
+    /* ── FEATURED ROW ── */
+    .ev-featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(0, 0, 0, .06);
+      margin-bottom: 1px;
+    }
+
+    .ev-feat-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .ev-feat-card .ev-media {
+      height: 360px;
+    }
+
+    .ev-feat-card .ev-body {
+      padding: 24px 28px 26px;
+    }
+
+    .ev-feat-card .ev-body h3 {
+      font-size: 1.15rem;
+    }
+
+    /* ── LIGHTBOX (video player) ── */
+    .lb {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 9, 28, .95);
+      z-index: 5000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lb.open {
+      display: flex;
+    }
+
+    .lb video {
+      max-width: 92vw;
+      max-height: 85vh;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .lb-close {
+      position: absolute;
+      top: 18px;
+      left: 22px;
+      background: rgba(243, 191, 91, .15);
+      border: 1.5px solid rgba(243, 191, 91, .5);
+      color: var(--gold);
+      font-size: 1.2rem;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s;
+    }
+
+    .lb-close:hover {
+      background: rgba(243, 191, 91, .35);
+    }
+
+    /* Mobile */
+    @media(max-width:900px) {
+      .events-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .ev-featured {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:550px) {
+      .events-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ev-feat-card .ev-media {
+        height: 240px;
+      }
+    }
+
+    /* ── LATEST SECTION ── */
+    .ev-latest {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(0, 0, 0, .06);
+      margin-bottom: 1px;
+    }
+
+    .ev-latest-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ev-latest-card[data-cat].hidden {
+      display: none;
+    }
+
+    .ev-latest-card .ev-media {
+      height: 400px;
+    }
+
+    .ev-latest-card .ev-body {
+      padding: 24px 28px 26px;
+      border-top: 3px solid var(--gold);
+    }
+
+    .ev-latest-card .ev-body h3 {
+      font-size: 1.2rem;
+    }
+
+    .ev-latest-card:hover .ev-media video {
+      transform: scale(1.06);
+    }
+
+    .ev-latest-card:hover .ev-play-circle {
+      background: var(--gold);
+      transform: scale(1.1);
+    }
+
+    .ev-latest-card:hover .ev-play-circle svg {
+      fill: var(--navy);
+    }
+
+    /* NEW badge */
+    .badge-new {
+      background: #e63946;
+      color: #fff;
+    }
+
+    .events-cat-title.latest-title span {
+      color: #e63946;
+    }
+
+    @media(max-width:900px) {
+      .ev-latest {
+        grid-template-columns: 1fr;
+      }
+
+      .ev-latest-card .ev-media {
+        height: 260px;
+      }
+    }
+
+    @media(max-width:550px) {
+      .ev-latest-card .ev-media {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="site-header">
+    <div class="toolbar" style="display:flex;align-items:center;justify-content:space-between;padding:8px 16px;">
+      <a href="index.html"><img src="Photos/Logo.svg" alt="شعار السكن"></a>
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false"><span
+            id="langFlag">🇯🇴</span><span id="langLabel">العربية</span><span class="lang-arrow">▼</span></button>
+        <div class="lang-dropdown" role="listbox">
+          <div class="lang-option active" data-lang="ar" role="option" tabindex="0"><span class="flag">🇯🇴</span>
+            العربية</div>
+          <div class="lang-option" data-lang="en" role="option" tabindex="0"><span class="flag">EN</span> English
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar" role="navigation">
+      <button class="hamburger" id="hamburger" aria-label="فتح القائمة"
+        aria-expanded="false"><span></span><span></span><span></span></button>
+      <a href="index.html" data-t="nav_home">الرئيسية</a>
+      <a href="Rooms_Page.html" data-t="nav_rooms">الغرف</a>
+      <a href="Services_Page.html" data-t="nav_services">الخدمات والمرافق</a>
+      <a href="News_Page.html" data-t="nav_news" class="active">الأخبار والفعاليات</a>
+      <a href="Guide_Page.html" data-t="nav_guide">دليل السكن</a>
+      <a href="Contact_Page.html" data-t="nav_contact">تواصل معنا</a>
+    </nav>
+  </div>
+
+  <div class="page-hero">
+    <h1><span data-t="news_hero_title">الأخبار</span> <span data-t="news_hero_title_span">والفعاليات</span></h1>
+    <p data-t="news_hero_sub">آخر المستجدات من السكن</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <!-- Filter -->
+  <div class="filter-wrap">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all" data-t="news_filter_all">الكل</button>
+      <button class="filter-btn" data-filter="event" data-t="news_filter_event">فعاليات</button>
+      <button class="filter-btn" data-filter="announcement" data-t="news_filter_ann">إعلانات</button>
+      <button class="filter-btn" data-filter="service" data-t="news_filter_svc">خدمات</button>
+    </div>
+  </div>
+
+  <main>
+    <div class="events-outer">
+
+      <!-- ══ أحدث فعالياتنا ══ -->
+      <div class="events-cat-title latest-title" data-t="news_cat_latest">أحدث <span
+          data-t="news_cat_latest_span">فعالياتنا</span></div>
+      <div class="ev-latest" id="sec-latest">
+
+        <!-- Celebrating Ramadan 2026 -->
+        <div class="ev-latest-card" data-cat="event" onclick="openLB('Videos/Events/Celebrating_Ramadan2026.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Events/Celebrating_Ramadan2026.mp4" muted loop autoplay playsinline
+              preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-new" data-t="news_badge_new">جديد</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year">2026</div>
+            <h3 data-t="news_latest1_title">تجهيزات رمضان 2026</h3>
+            <p data-t="news_latest1_desc">أجواء رمضانية مميزة وتجهيزات خاصة استقبلت بها السكن شهر رمضان المبارك
+              2026.</p>
+          </div>
+        </div>
+
+        <!-- Ramadan Iftar 2026 -->
+        <div class="ev-latest-card" data-cat="event" onclick="openLB('Videos/Events/Ramadan_Iftar2026.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Events/Ramadan_Iftar2026.mp4" muted loop autoplay playsinline preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-new" data-t="news_badge_new">جديد</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year">2026</div>
+            <h3 data-t="news_latest2_title">إفطار رمضان الجماعي 2026</h3>
+            <p data-t="news_latest2_desc">مائدة إفطار جمعت طالبات السكن في أجواء رمضانية دافئة تجمع القلوب وتوحّد
+              الأواصر.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ══ FEATURED ══ -->
+      <div class="events-cat-title" data-t="news_cat_featured">أبرز الفعاليات</div>
+      <div class="ev-featured" id="sec-featured">
+
+        <!-- Graduation 2025 -->
+        <div class="ev-feat-card" data-cat="event" onclick="openLB('Videos/Events/Graduation_celebration2025.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Events/Graduation_celebration2025.mp4" muted loop autoplay playsinline
+              preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-event" data-t="news_badge_event">فعالية</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year">2025</div>
+            <h3 data-t="news_ev1_title">حفل تخرج الدفعة الجديدة 2025</h3>
+            <p data-t="news_ev1_desc">احتفالية مميزة بتخرج طالباتنا — لحظات فرح ونجاح صنعناها معاً.</p>
+          </div>
+        </div>
+
+        <!-- Ramadan Iftar 2025 -->
+        <div class="ev-feat-card" data-cat="event" onclick="openLB('Videos/Events/Ramadan_Iftar2025.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Events/Ramadan_Iftar2025.mp4" muted loop autoplay playsinline preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-event" data-t="news_badge_event">فعالية</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year">2025</div>
+            <h3 data-t="news_ev2_title">إفطار رمضان الجماعي 2025</h3>
+            <p data-t="news_ev2_desc">مائدة إفطار جمعت طالبات السكن في أجواء رمضانية دافئة ومميزة.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ══ فعاليات دينية وثقافية ══ -->
+      <div class="events-cat-title" data-t="news_cat_events">فعاليات دينية وثقافية</div>
+      <div class="events-grid" id="sec-events">
+
+        <!-- Celebrating Ramadan 2025 -->
+        <div class="ev-card" data-cat="event" onclick="openLB('Videos/Events/Celebrating_Ramadan2025.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Events/Celebrating_Ramadan2025.mp4" muted loop autoplay playsinline
+              preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-event" data-t="news_badge_event">فعالية</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year">2025</div>
+            <h3 data-t="news_ev3_title">الاحتفال بقدوم رمضان 2025</h3>
+            <p data-t="news_ev3_desc">فعالية ترحيبية بشهر رمضان المبارك مع الطالبات والإدارة.</p>
+          </div>
+        </div>
+
+        <!-- Celebrating Ramadan 2024 -->
+        <div class="ev-card" data-cat="event" onclick="openLB('Videos/Events/Celebrating_Ramadan2024.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Events/Celebrating_Ramadan2024.mp4" muted loop autoplay playsinline
+              preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-event" data-t="news_badge_event">فعالية</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year">2024</div>
+            <h3 data-t="news_ev4_title">الاحتفال بقدوم رمضان 2024</h3>
+            <p data-t="news_ev4_desc">أجواء رمضانية جميلة جمعت ساكنات السكن في حفل مميز.</p>
+          </div>
+        </div>
+
+        <!-- Prophet's Birthday -->
+        <div class="ev-card" data-cat="event" onclick="openLB('Videos/Events/Celebrating_the_Prophet_s_Birthday.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Events/Celebrating_the_Prophet's_Birthday.mp4" muted loop autoplay playsinline
+              preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-event" data-t="news_badge_event">فعالية</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year">2024</div>
+            <h3 data-t="news_ev5_title">الاحتفال بالمولد النبوي الشريف</h3>
+            <p data-t="news_ev5_desc">احتفاء بذكرى المولد النبوي الشريف في جو من المحبة والتواصل.</p>
+          </div>
+        </div>
+
+        <!-- Ramadan Iftar 2024 -->
+        <div class="ev-card" data-cat="event" onclick="openLB('Videos/Events/Ramadan_Iftar2024.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Events/Ramadan_Iftar2024.mp4" muted loop autoplay playsinline preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-event" data-t="news_badge_event">فعالية</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year">2024</div>
+            <h3 data-t="news_ev6_title">إفطار رمضان الجماعي 2024</h3>
+            <p data-t="news_ev6_desc">إفطار جماعي يجمع الطالبات على مائدة رمضانية دافئة.</p>
+          </div>
+        </div>
+
+        <!-- New Year's -->
+        <div class="ev-card" data-cat="event" onclick="openLB('Videos/Events/New_Years_celebration.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Events/New_Years_celebration.mp4" muted loop autoplay playsinline
+              preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-event" data-t="news_badge_event">فعالية</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year">2024</div>
+            <h3 data-t="news_ev7_title">الاحتفال بالعام الجديد</h3>
+            <p data-t="news_ev7_desc">لحظات فرح واستقبال العام الجديد مع ساكنات السكن.</p>
+          </div>
+        </div>
+
+        <!-- Graduation 2024 -->
+        <div class="ev-card" data-cat="event" onclick="openLB('Videos/Events/Graduation_celebration2024.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Events/Graduation_celebration2024.mp4" muted loop autoplay playsinline
+              preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-event" data-t="news_badge_event">فعالية</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year">2024</div>
+            <h3 data-t="news_ev8_title">حفل تخرج دفعة 2024</h3>
+            <p data-t="news_ev8_desc">يوم لا يُنسى بتخرج طالباتنا المتميزات وبداية مرحلة جديدة.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ══ إعلانات وخدمات ══ -->
+      <div class="events-cat-title" data-t="news_cat_services">خدمات وإعلانات</div>
+      <div class="events-grid" id="sec-services">
+
+        <!-- Gym -->
+        <div class="ev-card" data-cat="service" onclick="openLB('Videos/Services/Gym.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Services/Gym.mp4" muted loop autoplay playsinline preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-service" data-t="news_badge_svc">خدمة</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year" data-t="news_label_amenities">المرافق</div>
+            <h3 data-t="news_sv1_title">النادي الصحي المجهز بالكامل</h3>
+            <p data-t="news_sv1_desc">جولة داخل النادي الصحي الحصري للطالبات بكل أجهزته الحديثة.</p>
+          </div>
+        </div>
+
+        <!-- academic + wellbeing sessions -->
+        <div class="ev-card" data-cat="announcement" onclick="openLB('Videos/Events/Wellness_Session.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Events/Wellness_Session.mp4" muted loop autoplay playsinline
+              preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-ann" data-t="news_badge_ann">إعلان</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year">2024</div>
+            <h3 data-t="news_sv2_title">فاعلية الفيزياء التشريحية</h3>
+            <p data-t="news_sv2_desc">فعالية أكاديمية متخصصة لطالبات الكليات الطبية.</p>
+          </div>
+        </div>
+
+        <!-- Human Anatomy -->
+        <div class="ev-card" data-cat="announcement" onclick="openLB('Videos/Events/Academic_Workshop.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Events/Academic_Workshop.mp4" muted loop autoplay playsinline preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-ann" data-t="news_badge_ann">إعلان</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year">2024</div>
+            <h3 data-t="news_sv3_title">جلسة تشريح جسم الإنسان</h3>
+            <p data-t="news_sv3_desc">دعم أكاديمي متخصص لطالبات كلية الطب والعلوم الصحية.</p>
+          </div>
+        </div>
+
+        <!-- Maintenance -->
+        <div class="ev-card" data-cat="service" onclick="openLB('Videos/Services/Maintenance.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Services/Maintenance.mp4" muted loop autoplay playsinline preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-service" data-t="news_badge_svc">خدمة</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year" data-t="news_label_amenities">المرافق</div>
+            <h3 data-t="news_sv4_title">فريق الصيانة الاحترافي</h3>
+            <p data-t="news_sv4_desc">استجابة فورية لأي عطل — فريق صيانة متخصص يعمل على مدار الأسبوع.</p>
+          </div>
+        </div>
+
+        <!-- Parents' opinions -->
+        <div class="ev-card" data-cat="announcement" onclick="openLB('Videos/Events/Parents_opinions.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Events/Parents_opinions.mp4" muted loop autoplay playsinline preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-ann" data-t="news_badge_ann">إعلان</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year">2024</div>
+            <h3 data-t="news_sv5_title">آراء الأهالي — شهادات حقيقية</h3>
+            <p data-t="news_sv5_desc">الأهالي يتحدثون عن تجربتهم مع السكن وما يميزه.</p>
+          </div>
+        </div>
+
+        <!-- Fire alarm -->
+        <div class="ev-card" data-cat="service" onclick="openLB('Videos/Services/Fire_alarm.mp4')">
+          <div class="ev-media">
+            <video src="Videos/Services/Fire_alarm.mp4" muted loop autoplay playsinline preload="metadata"></video>
+            <div class="ev-play">
+              <div class="ev-play-circle"><svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg></div>
+            </div>
+            <span class="ev-badge badge-service" data-t="news_badge_svc">خدمة</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-year" data-t="news_label_safety">الأمان</div>
+            <h3 data-t="news_sv6_title">نظام إنذار الحريق المتطور</h3>
+            <p data-t="news_sv6_desc">منظومة أمان متكاملة تشمل كاشفات دخان وإنذار حريق في جميع الطوابق.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Lightbox video player -->
+  <div class="lb" id="lb" onclick="closeLB(event)">
+    <button class="lb-close" onclick="closeLB()" aria-label="إغلاق">✕</button>
+    <video id="lbVid" controls playsinline style="background:#000;"></video>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer" role="contentinfo">
+    <p data-t="footer_text">© 2026 نموذج سكن طلابي - جميع الحقوق محفوظة</p>
+    <p data-t="footer_credit" style="font-size:12px; margin-top:4px; opacity:0.75;">Designed &amp; Developed by Lujain Omar Al-Khalifat</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/lo0k_404?stkn=MTY5czFrOWpvb3hzcQ==" target="_blank" rel="noopener noreferrer" class="soc-instagram"
+        aria-label="إنستغرام">
+        <img src="icons/instagram.svg" alt="Instagram"></a>
+      <a href="https://www.facebook.com/share/1bdwPXqzQG/" target="_blank" rel="noopener noreferrer" class="soc-facebook"
+        aria-label="فيسبوك">
+        <img src="icons/facebook.svg" alt="Facebook"></a>
+      <a href="https://wa.me/962775444643" target="_blank" rel="noopener noreferrer" class="soc-whatsapp"
+        aria-label="واتساب">
+        <img src="icons/whatsapp.svg" alt="WhatsApp"></a>
+      <a href="mailto:lo0k.404.tech.dev@gmail.com" target="_blank" class="soc-gmail" aria-label="البريد الإلكتروني">
+        <img src="icons/email.svg" alt="Email us on Gmail" title="Gmail"></a>
+    </div>
+  </footer>
+
+  <script>
+    /* ── Lightbox ── */
+    function openLB(src) {
+      var v = document.getElementById('lbVid');
+      v.src = src;
+      v.muted = false;
+      document.getElementById('lb').classList.add('open');
+      v.play().catch(function () { });
+    }
+    function closeLB(e) {
+      if (e && e.target !== document.getElementById('lb') && !e.target.classList.contains('lb-close')) return;
+      var v = document.getElementById('lbVid');
+      v.pause(); v.src = '';
+      document.getElementById('lb').classList.remove('open');
+    }
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLB({ target: document.getElementById('lb') }); });
+
+    /* ── Filter ── */
+    document.querySelectorAll('.filter-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var f = btn.getAttribute('data-filter');
+        document.querySelectorAll('.ev-card, .ev-feat-card, .ev-latest-card').forEach(function (card) {
+          card.classList.toggle('hidden', f !== 'all' && card.getAttribute('data-cat') !== f);
+        });
+      });
+    });
+  </script>
+  <script>
+    (function () { var btn = document.getElementById('hamburger'), nav = document.querySelector('.navbar'); if (!btn || !nav) return; btn.addEventListener('click', function () { var o = nav.classList.toggle('nav-open'); btn.classList.toggle('open', o); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); }); nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { nav.classList.remove('nav-open'); btn.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }); }); })();
+    (function () { function s() { var h = document.querySelector('.site-header'); if (h) document.documentElement.style.setProperty('--header-h', h.offsetHeight + 'px'); } s(); window.addEventListener('resize', s, { passive: true }); })();
+  </script>
+  <script src="Js/java.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+# Normalise line endings to LF: this is a web project and every file is served
+# to a browser, so CRLF would only add noise to diffs.
+* text=auto eol=lf
+
+# Binary media — never touch
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.gif   binary
+*.mp4   binary
+*.mp3   binary

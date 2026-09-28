@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا — سكن الطالبات</title>
+    <meta name="description"
+        content="تواصلي مع سكن الطالبات — احجزي غرفتك أو استفسري عبر واتساب أو الفورم المباشر.">
+    <meta name="keywords" content="تواصل السكن, حجز سكن طالبات, سكن طلابي, نموذج أولي">
+    <meta name="author" content="Student Housing Team">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="تواصل معنا — سكن الطالبات">
+    <meta property="og:description" content="تواصلي مع إدارة سكن الطالبات — نموذج أولي.">
+    <meta property="og:image" content="Photos/Logo.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="icon" href="Photos/Logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script src="Js/lang-data.js"></script>
+
+    <script>
+      (function (d) {
+          var s = d.createElement("script");
+          s.setAttribute("data-position", 5);
+          s.setAttribute("data-color", "#F3BF5B");
+          s.setAttribute("data-widget_layout", "full");
+          s.setAttribute("data-account", "6AjWs1Mzxq");
+          s.setAttribute("src", "https://cdn.userway.org/widget.js");
+          (d.body || d.head).appendChild(s);
+      })(document);
+    </script>
+        <style>
+        /* Layout */
+        .contact-wrapper {
+            max-width: 1060px;
+            margin: 52px auto;
+            padding: 0 24px 70px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Info side */
+        .contact-info h2 {
+            font-family: 'Cairo', serif;
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: #02091C;
+            margin-bottom: 22px;
+        }
+
+        .ci-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 18px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 14px rgba(2, 9, 28, .06);
+            border: 1px solid rgba(243, 191, 91, .12);
+            margin-bottom: 14px;
+            text-decoration: none;
+            transition: box-shadow .2s, transform .2s;
+        }
+
+        .ci-card:hover {
+            box-shadow: 0 6px 22px rgba(2, 9, 28, .11);
+            transform: translateY(-2px);
+        }
+
+        .ci-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(243, 191, 91, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ci-icon img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .ci-body strong {
+            display: block;
+            font-family: 'Cairo', sans-serif;
+            font-size: .78rem;
+            font-weight: 700;
+            color: #718096;
+            margin-bottom: 2px;
+        }
+
+        .ci-body span {
+            font-family: 'Cairo', sans-serif;
+            font-size: .95rem;
+            font-weight: 700;
+            color: #02091C;
+        }
+
+        .ci-body span.green {
+            color: #25d366;
+        }
+
+        /* بطاقة بأيقونة واحدة وزرين */
+        .ci-card-dual {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 18px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 14px rgba(2, 9, 28, .06);
+            border: 1px solid rgba(243, 191, 91, .12);
+            margin-bottom: 14px;
+        }
+
+        .ci-dual-body {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+        }
+
+        .ci-dual-body strong {
+            font-family: 'Cairo', sans-serif;
+            font-size: .78rem;
+            font-weight: 700;
+            color: #718096;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .ci-dual-btns {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .ci-num-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 7px 14px;
+            border-radius: 50px;
+            font-family: 'Cairo', sans-serif;
+            font-size: .88rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform .15s, background .2s;
+            white-space: nowrap;
+            direction: ltr;
+        }
+
+        .ci-num-btn.green {
+            background: rgba(37, 211, 102, .1);
+            color: #1a9e50;
+            border: 1.5px solid rgba(37, 211, 102, .3);
+        }
+
+        .ci-num-btn.green:hover {
+            background: #25d366;
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .ci-num-btn.dark {
+            background: rgba(2, 9, 28, .06);
+            color: #02091C;
+            border: 1.5px solid rgba(2, 9, 28, .12);
+        }
+
+        .ci-num-btn.dark:hover {
+            background: #02091C;
+            color: #F3BF5B;
+            transform: translateY(-1px);
+        }
+
+        /* Form */
+        .contact-form-box {
+            background: #fff;
+            border-radius: 20px;
+            padding: 36px 32px;
+            box-shadow: 0 6px 32px rgba(2, 9, 28, .08);
+            border: 1px solid rgba(243, 191, 91, .14);
+        }
+
+        .contact-form-box h2 {
+            font-family: 'Cairo', serif;
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #02091C;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Cairo', sans-serif;
+            font-size: .83rem;
+            font-weight: 700;
+            color: #294062;
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px 14px;
+            font-family: 'Cairo', sans-serif;
+            font-size: .9rem;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 10px;
+            outline: none;
+            transition: border-color .2s;
+            color: #02091C;
+            background: #fafbfc;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #F3BF5B;
+            background: #fff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-group select option {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #F3BF5B;
+            color: #02091C;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 900;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background .2s, transform .15s;
+            box-shadow: 0 4px 16px rgba(243, 191, 91, .35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .submit-btn:hover {
+            background: #d4a84f;
+            transform: translateY(-1px);
+        }
+
+        .form-note {
+            font-family: 'Cairo', sans-serif;
+            font-size: .76rem;
+            color: #718096;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .success-toast {
+            display: none;
+            text-align: center;
+            padding: 14px;
+            background: rgba(37, 211, 102, .08);
+            border: 1px solid rgba(37, 211, 102, .25);
+            border-radius: 10px;
+            color: #16a34a;
+            font-family: 'Cairo', sans-serif;
+            font-size: .9rem;
+            font-weight: 700;
+            margin-top: 14px;
+        }
+
+        /* Map */
+        .map-section {
+            max-width: 1060px;
+            margin: 0 auto 60px;
+            padding: 0 24px;
+        }
+
+        .map-section h2 {
+            font-family: 'Cairo', serif;
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #02091C;
+            margin-bottom: 14px;
+        }
+
+        .map-wrap {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 28px rgba(2, 9, 28, .1);
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 340px;
+            border: none;
+            display: block;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background:
+                radial-gradient(circle at 50% 42%, rgba(243, 191, 91, .14), transparent 58%),
+                linear-gradient(160deg, #051c43 0%, #02091c 100%);
+        }
+
+        .map-placeholder__pin {
+            width: 18px;
+            height: 18px;
+            border-radius: 50% 50% 50% 0;
+            background: #f3bf5b;
+            transform: rotate(-45deg);
+            box-shadow: 0 0 0 6px rgba(243, 191, 91, .16);
+        }
+
+        .map-placeholder__label {
+            font-size: .9rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .72);
+        }
+
+        /* Location strip */
+        .location-strip {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 14px 18px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 16px;
+            font-family: 'Cairo', sans-serif;
+            font-size: .88rem;
+            color: #294062;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background .2s;
+        }
+
+        .location-strip:hover {
+            background: #eef2f7;
+        }
+
+        .location-strip img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+        @media(max-width:768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="site-header">
+        <div class="toolbar" style="display:flex;align-items:center;justify-content:space-between;padding:8px 16px;">
+            <a href="index.html"><img src="Photos/Logo.svg" alt="شعار السكن"></a>
+            <div class="lang-switcher" id="langSwitcher">
+                <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false"><span
+                        id="langFlag">🇯🇴</span><span id="langLabel">العربية</span><span
+                        class="lang-arrow">▼</span></button>
+                <div class="lang-dropdown" role="listbox">
+                    <div class="lang-option active" data-lang="ar" role="option" tabindex="0"><span
+                            class="flag">🇯🇴</span> العربية</div>
+                    <div class="lang-option" data-lang="en" role="option" tabindex="0"><span class="flag">EN</span>
+                        English</div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar" role="navigation">
+            <button class="hamburger" id="hamburger" aria-label="فتح القائمة"
+                aria-expanded="false"><span></span><span></span><span></span></button>
+            <a href="index.html" data-t="nav_home">الرئيسية</a>
+            <a href="Rooms_Page.html" data-t="nav_rooms">الغرف</a>
+            <a href="Services_Page.html" data-t="nav_services">الخدمات والمرافق</a>
+            <a href="News_Page.html" data-t="nav_news">الأخبار والفعاليات</a>
+            <a href="Guide_Page.html" data-t="nav_guide">دليل السكن</a>
+            <a href="Contact_Page.html" data-t="nav_contact" class="active">تواصل معنا</a>
+        </nav>
+    </div>
+
+    <div class="page-hero">
+        <h1><span data-t="contact_hero_title">تواصلي</span> <span data-t="contact_hero_span">معنا</span></h1>
+        <p data-t="contact_hero_sub">نحن هنا للإجابة على كل أسئلتكِ</p>
+        <div class="gold-line"></div>
+    </div>
+
+    <main>
+        <div class="contact-wrapper">
+
+            <!-- Info side -->
+            <div class="contact-info">
+                <h2 data-t="contact_info_title">معلومات التواصل</h2>
+
+                <!-- واتساب — أيقونة واحدة + زرين -->
+                <div class="ci-card-dual">
+                    <div class="ci-icon"><img src="icons/whatsapp-green.svg" alt="واتساب"></div>
+                    <div class="ci-dual-body">
+                        <strong data-t="contact_label_wa">واتساب</strong>
+                        <div class="ci-dual-btns">
+                            <a class="ci-num-btn green" href="https://wa.me/962775444643" target="_blank"
+                                rel="noopener">+962 7 754 44643</a>
+                            <a class="ci-num-btn green soc-whatsapp" href="https://wa.me/962775444643" target="_blank"
+                                rel="noopener">+962 7 754 44643</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- اتصال مباشر — أيقونة واحدة + زرين -->
+                <div class="ci-card-dual">
+                    <div class="ci-icon"><img src="icons/call.svg" alt="هاتف"></div>
+                    <div class="ci-dual-body">
+                        <strong data-t="contact_label_call">اتصال مباشر</strong>
+                        <div class="ci-dual-btns">
+                            <a class="ci-num-btn dark" href="tel:+962775444643">+962775444643</a>
+                            <a class="ci-num-btn dark" href="tel:+962775444643">+962775444643</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facebook -->
+                <a class="ci-card" href="https://www.facebook.com/share/1bdwPXqzQG/" target="_blank" rel="noopener">
+                    <div class="ci-icon"><img src="icons/facebook-blue.svg" alt="فيسبوك"></div>
+                    <div class="ci-body"><strong data-t="contact_label_fb">فيسبوك</strong><span
+                            data-t="contact_fb_name">سكن الطالبات</span></div>
+                </a>
+
+                <!-- Instagram -->
+                <a class="ci-card" href="https://www.instagram.com/lo0k_404?stkn=MTY5czFrOWpvb3hzcQ==" target="_blank" rel="noopener">
+                    <div class="ci-icon"><img src="icons/instagram-org.svg" alt="إنستغرام"></div>
+                    <div class="ci-body"><strong data-t="contact_label_ig">إنستغرام</strong><span>@studenthousingdorm</span>
+                    </div>
+                </a>
+
+                <a class="ci-card" href="https://example.com/studenthousing/location" target="_blank" rel="noopener">
+                    <div class="ci-icon"><img src="icons/map.svg" alt="موقع"
+                            style="filter: hue-rotate(310deg) saturate(5);"></div>
+                    <div class="ci-body"><strong data-t="contact_label_loc">الموقع</strong><span
+                            data-t="contact_location">قرب الحرم الجامعي</span></div>
+                </a>
+
+            </div>
+
+            <!-- Form -->
+            <div class="contact-form-box">
+                <h2 data-t="contact_form_title">أرسلي استفسارك عبر واتساب</h2>
+                <div class="form-group">
+                    <label data-t="contact_form_name">الاسم الكامل <span style="color:#ef4444;">*</span></label>
+                    <input type="text" id="f-name" placeholder="اسمكِ الكريم" data-placeholder="contact_ph_name"
+                        autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label data-t="contact_form_uni">الجامعة / الكلية</label>
+                    <input type="text" id="f-uni" placeholder="مثال: اسم الجامعة — الكلية"
+                        data-placeholder="contact_ph_uni">
+                </div>
+                <div class="form-group">
+                    <label data-t="contact_form_room">نوع الغرفة المطلوبة</label>
+                    <select id="f-room">
+                        <option value="" data-t="contact_room_placeholder">— اختاري نوع الغرفة —</option>
+                        <option data-t="room_single_royal_name">غرفة مفردة رويال</option>
+                        <option data-t="room_single_ordinary_name">غرفة مفردة عادية</option>
+                        <option data-t="room_double_vip_name">غرفة مزدوجة VIP</option>
+                        <option data-t="room_double_ordinary_name">غرفة مزدوجة عادية</option>
+                        <option data-t="room_triple_name">غرفة ثلاثية</option>
+                        <option data-t="contact_room_general">استفسار عام</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-t="contact_form_semester">الفصل الدراسي المطلوب</label>
+                    <select id="f-semester">
+                        <option value="" data-t="contact_sem_placeholder">— اختاري —</option>
+                        <option data-t="contact_sem1">الفصل الأول 2025/2026</option>
+                        <option data-t="contact_sem2">الفصل الثاني 2025/2026</option>
+                        <option data-t="contact_sem3">الفصل الصيفي 2026</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-t="contact_form_msg">رسالتكِ أو أي تفاصيل إضافية</label>
+                    <textarea id="f-msg" placeholder="اكتبي استفساركِ أو أي ملاحظات..."
+                        data-placeholder="contact_ph_msg"></textarea>
+                </div>
+                <button class="submit-btn" id="sendBtn">
+                    <img src="icons/whatsapp_white.svg" alt="">
+                    <span data-t="contact_form_submit">إرسال عبر واتساب</span>
+                </button>
+                <p class="form-note" data-t="contact_form_note">سيتم فتح واتساب برسالتكِ تلقائياً — سريع وبدون تعقيد</p>
+                <div class="success-toast" id="successToast" data-t="contact_sending">جاري فتح واتساب...</div>
+            </div>
+
+        </div>
+
+        <!-- Map -->
+        <div class="map-section">
+            <h2 data-t="contact_map_title">موقعنا على الخريطة</h2>
+            <a class="location-strip" href="https://example.com/studenthousing/location" target="_blank" rel="noopener">
+                <img src="icons/map.svg" alt="موقع" style="filter: hue-rotate(310deg) saturate(5);">
+                <span data-t="contact_map_strip">قرب الحرم الجامعي — اضغطي لعرض الموقع</span>
+            </a>
+            <div class="map-wrap">
+                <div class="map-placeholder" role="img" aria-label="Map placeholder - Student Housing prototype">
+                    <span class="map-placeholder__pin" aria-hidden="true"></span>
+                    <span class="map-placeholder__label">Map placeholder</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="footer" role="contentinfo">
+        <p data-t="footer_text">© 2026 نموذج سكن طلابي - جميع الحقوق محفوظة</p>
+        <p data-t="footer_credit" style="font-size:12px; margin-top:4px; opacity:0.75;">Designed &amp; Developed by Lujain Omar Al-Khalifat</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/lo0k_404?stkn=MTY5czFrOWpvb3hzcQ==" target="_blank" rel="noopener noreferrer"
+                class="soc-instagram" aria-label="إنستغرام">
+                <img src="icons/instagram.svg" alt="Instagram"></a>
+            <a href="https://www.facebook.com/share/1bdwPXqzQG/" target="_blank" rel="noopener noreferrer"
+                class="soc-facebook" aria-label="فيسبوك">
+                <img src="icons/facebook.svg" alt="Facebook"></a>
+            <a href="https://wa.me/962775444643" target="_blank" rel="noopener noreferrer" class="soc-whatsapp"
+                aria-label="واتساب">
+                <img src="icons/whatsapp.svg" alt="WhatsApp"></a>
+            <a href="mailto:lo0k.404.tech.dev@gmail.com" target="_blank" class="soc-gmail" aria-label="البريد الإلكتروني">
+                <img src="icons/email.svg" alt="Email us on Gmail" title="Gmail"></a>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('sendBtn').addEventListener('click', function () {
+            var name = document.getElementById('f-name').value.trim();
+            if (!name) { alert(window.AM_T && window.AM_T[localStorage.getItem('am_lang') || 'ar']['contact_alert_name'] || 'من فضلكِ أدخلي اسمكِ'); return; }
+            var phone = document.getElementById('f-phone').value.trim();
+            var uni = document.getElementById('f-uni').value.trim();
+            var room = document.getElementById('f-room').value;
+            var sem = document.getElementById('f-semester').value;
+            var msg = document.getElementById('f-msg').value.trim();
+            var text = 'مرحباً، أود الاستفسار عن سكن الطالبات.\n\n';
+            text += 'الاسم: ' + name + '\n';
+            if (phone) text += 'الهاتف: ' + phone + '\n';
+            if (uni) text += 'الجامعة: ' + uni + '\n';
+            if (room) text += 'الغرفة المطلوبة: ' + room + '\n';
+            if (sem) text += 'الفصل: ' + sem + '\n';
+            if (msg) text += '\nالرسالة: ' + msg;
+            document.getElementById('successToast').style.display = 'block';
+            setTimeout(function () { window.open('https://wa.me/962775444643?text=' + encodeURIComponent(text), '_blank'); }, 400);
+        });
+    </script>
+    <script>
+        (function () { var btn = document.getElementById('hamburger'), nav = document.querySelector('.navbar'); if (!btn || !nav) return; btn.addEventListener('click', function () { var o = nav.classList.toggle('nav-open'); btn.classList.toggle('open', o); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); }); nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { nav.classList.remove('nav-open'); btn.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }); }); })();
+        (function () { function s() { var h = document.querySelector('.site-header'); if (h) document.documentElement.style.setProperty('--header-h', h.offsetHeight + 'px'); } s(); window.addEventListener('resize', s, { passive: true }); })();
+    </script>
+    <script src="Js/java.js"></script>
+</body>
+
+</html>
