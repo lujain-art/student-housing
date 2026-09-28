@@ -319,7 +319,7 @@ window.AM_T = {
 
     /* Footer */
     footer_text: '© 2026 نموذج سكن طلابي - جميع الحقوق محفوظة',
-    footer_credit:"تصميم وتطوير: لجين عمر الخليفات",
+    footer_credit:"تصميم وتطوير: Loʘk",
   },
 
   /* ══════════════════════════════
@@ -625,7 +625,7 @@ window.AM_T = {
 
     /* Footer */
     footer_text: "© 2026 Student Housing Prototype - All rights reserved",
-    footer_credit:"Design & Development: Lujain Omar Al-Khalifat",
+    footer_credit:"Design & Development: Loʘk",
   }
 };
 
